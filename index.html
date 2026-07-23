@@ -37,6 +37,9 @@
     padding:16px 22px;
     border-bottom:1px solid rgba(212,175,55,0.12);
     font-size:17px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
   }
   .checklist li:last-child{border-bottom:none}
   .checklist li::before{
@@ -46,9 +49,30 @@
   .checklist a{
     color:#e8e6e3;
     text-decoration:none;
+    flex:1;
   }
   .checklist a:hover{color:#d4af37}
   .checklist li:hover{background:rgba(212,175,55,0.08)}
+
+  /* LE BOUTON OR */
+  .download-gold{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:32px; height:32px;
+    border:1px solid #d4af37;
+    color:#d4af37;
+    border-radius:7px;
+    font-size:16px;
+    text-decoration:none;
+    margin-left:12px;
+    flex:none;
+    transition:0.2s;
+  }
+  .download-gold:hover{
+    background:#d4af37;
+    color:#0a1228;
+  }
 </style>
 </head>
 <body>
@@ -59,9 +83,11 @@
     <ul class="checklist">
       <li><a href="https://github.com/CircaFrax/CircaFrax-OS" target="_blank">CircaFrax OS</a></li>
       <li><a href="https://github.com/CircaFrax/Mwangaza-OS" target="_blank">Mwangaza OS</a></li>
-      <li><a href="https://github.com/CircaFrax/CodexGenQrcode" target="_blank">CodexGenQrcode</a></li>
+      <li>
+        <a href="https://github.com/CircaFrax/CodexGenQrcode" target="_blank">CodexGenQrcode</a>
+        <a href="https://github.com/CircaFrax/CodexGenQrcode/releases/download/v0.4.3/CodexGenQrcode_v0.4.3.zip" class="download-gold" title="Télécharger v0.4.3">⬇</a>
+      </li>
       <li><a href="https://github.com/CircaFrax/CodexHiddenWind" target="_blank">CodexHiddenWind</a></li>
-      <li><a href="https://github.com/CircaFrax/CodexGenQrcode" target="_blank">CodexGenQrcode</a></li>
       <li><a href="https://github.com/CircaFrax/CodexNavigator" target="_blank">CodexNavigator</a></li>
       <li><a href="https://github.com/CircaFrax/CodexVortex" target="_blank">CodexVortex</a></li>
       <li><a href="https://github.com/CircaFrax/CodexMediaMusica" target="_blank">CodexMediaMusica</a></li>
