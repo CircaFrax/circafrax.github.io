@@ -5,176 +5,64 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CircaFrax - Outils libres, gratuits, hors ligne</title>
 <link rel="icon" href="assets/blason.png">
-
-<!-- SEO de base -->
 <meta name="description" content="Suite Codex par CircaFrax : des logiciels libres, gratuits et 100% hors ligne. Pour clubs, amicales, associations et entreprises. 0 tracker, 0 pub, comme en 1998 mais en mieux.">
-
-<!-- Open Graph pour Facebook / WhatsApp / Discord / LinkedIn -->
-<meta property="og:image" content="https://circafrax.github.io/assets/og-image.png">
+<meta property="og:title" content="CircaFrax - Outils libres, gratuits, hors ligne">
 <meta property="og:description" content="Des logiciels qui s'utilisent sans installation. 100% offline, 0 tracker, 0 pub. Pour le lien social : clubs, amicales, associations.">
-<meta property="og:image" content="https://circafrax.github.io/assets/banniere.png">
+<meta property="og:image" content="https://circafrax.github.io/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://circafrax.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="CircaFrax">
-
-<!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CircaFrax - Outils libres, gratuits, hors ligne">
 <meta name="twitter:description" content="Des logiciels libres et 100% hors ligne. Par l'équipe CircaFrax.">
-<meta name="twitter:image" content="https://circafrax.github.io/assets/banniere.png">
-
+<meta name="twitter:image" content="https://circafrax.github.io/assets/og-image.png">
 <style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{
-    background-color:#0a1228;
-    background-image:url('assets/wallpaper-nuit.webp');
-    background-repeat:no-repeat;
-    background-position:top center;
-    background-size:100% auto;
-    min-height:100vh;
-    font-family:system-ui, sans-serif;
-    color:#e8e6e3;
-  }
-  .banner{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    padding:28px 20px;
-    background:rgba(10,18,40,0.55);
-  }
-  .banner img{max-width:520px;width:90%;height:auto;}
-  .content{max-width:680px;margin:40px auto;padding:0 20px 80px;}
-
-  .section-title{
-    margin:36px 0 14px;
-    padding:0 4px;
-    font-size:11px;
-    letter-spacing:0.28em;
-    text-transform:uppercase;
-    color:#d4af37;
-    display:flex;
-    align-items:center;
-    gap:14px;
-    font-weight:700;
-    opacity:0.9;
-  }
-  .section-title::before,
-  .section-title::after{
-    content:"";
-    height:1px;
-    flex:1;
-    background:linear-gradient(to right, transparent, rgba(212,175,55,0.35));
-  }
-  .section-title::after{
-    background:linear-gradient(to left, transparent, rgba(212,175,55,0.35));
-  }
-
-  .checklist{
-    list-style:none;
-    border:1px solid rgba(212,175,55,0.25);
-    background:rgba(10,18,40,0.7);
-    border-radius:12px;
-    overflow:hidden;
-  }
-  .checklist li{
-    padding:16px 22px;
-    border-bottom:1px solid rgba(212,175,55,0.12);
-    font-size:17px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-  }
-  .checklist li:last-child{border-bottom:none}
-  .checklist li::before{
-    content:"○ ";
-    color:#d4af37;
-  }
-  .checklist a{
-    color:#e8e6e3;
-    text-decoration:none;
-    flex:1;
-  }
-  .checklist a:hover{color:#d4af37}
-  .checklist li:hover{background:rgba(212,175,55,0.08)}
-
-  .download-gold{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    padding:5px 8px;
-    border:1px solid #d4af37;
-    color:#d4af37;
-    border-radius:7px;
-    font-size:13px;
-    font-weight:600;
-    text-decoration:none;
-    margin-left:12px;
-    flex:none;
-    white-space:nowrap;
-  }
-  .download-gold:hover{
-    background:#d4af37;
-    color:#0a1228;
-  }
+*{margin:0;padding:0;box-sizing:border-box}
+body{background-color:#0a1228;background-image:url('assets/wallpaper-nuit.webp');background-repeat:no-repeat;background-position:top center;background-size:100% auto;min-height:100vh;font-family:system-ui,sans-serif;color:#e8e6e3}
+.banner{width:100%;display:flex;justify-content:center;padding:28px 20px;background:rgba(10,18,40,0.55)}
+.banner img{max-width:520px;width:90%;height:auto}
+.content{max-width:680px;margin:40px auto;padding:0 20px 80px}
+.section-title{margin:36px 0 14px;padding:0 4px;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#d4af37;display:flex;align-items:center;gap:14px;font-weight:700;opacity:0.9}
+.section-title::before,.section-title::after{content:"";height:1px;flex:1;background:linear-gradient(to right,transparent,rgba(212,175,55,0.35))}
+.section-title::after{background:linear-gradient(to left,transparent,rgba(212,175,55,0.35))}
+.checklist{list-style:none;border:1px solid rgba(212,175,55,0.25);background:rgba(10,18,40,0.7);border-radius:12px;overflow:hidden}
+.checklist li{padding:16px 22px;border-bottom:1px solid rgba(212,175,55,0.12);font-size:17px;display:flex;align-items:center;justify-content:space-between}
+.checklist li:last-child{border-bottom:none}
+.checklist li::before{content:"○ ";color:#d4af37}
+.checklist a{color:#e8e6e3;text-decoration:none;flex:1}
+.checklist a:hover{color:#d4af37}
+.checklist li:hover{background:rgba(212,175,55,0.08)}
+.download-gold{display:inline-flex;align-items:center;gap:6px;padding:5px 8px;border:1px solid #d4af37;color:#d4af37;border-radius:7px;font-size:13px;font-weight:600;text-decoration:none;margin-left:12px;flex:none;white-space:nowrap}
+.download-gold:hover{background:#d4af37;color:#0a1228}
 </style>
 </head>
 <body>
-  <div class="banner">
-    <img src="assets/banniere.png" alt="CircaFrax">
-  </div>
-  <div class="content">
-
-    <div class="section-title">Systèmes d'exploitation</div>
-    <ul class="checklist">
-      <li><a href="https://github.com/CircaFrax/CircaFrax-OS" target="_blank">CircaFrax OS</a></li>
-      <li><a href="https://github.com/CircaFrax/Mwangaza-OS" target="_blank">Mwangaza OS</a></li>
-    </ul>
-
-    <div class="section-title">Utilitaires</div>
-    <ul class="checklist">
-      <li>
-        <a href="https://github.com/CircaFrax/beta-test" target="_blank">CodexDevBetatest_Web</a>
-        <a href="https://circafrax.github.io/beta-test/index.html" class="download-gold">↗  Utiliser</a>
-      </li>
-      <li>
-        <a href="https://github.com/CircaFrax/CodexGenNamae" target="_blank">CodexGenNamae</a>
-        <a href="https://github.com/CircaFrax/CodexGenNamae/releases/download/v3.1.1/CodexGenNamae_v3.1.1.zip" class="download-gold">⬇ Télécharger</a>
-      </li>
-      <li>
-        <a href="https://github.com/CircaFrax/CodexGenQrcode" target="_blank">CodexGenQrcode</a>
-        <a href="https://github.com/CircaFrax/CodexGenQrcode/releases/download/v0.5.4/CodexGenQrcode_v0.5.4.zip" class="download-gold">⬇ Télécharger</a>
-      </li>
-      <li>
-        <a href="https://github.com/CircaFrax/CodexCompression" target="_blank">CodexCompression</a>
-        <a href="https://github.com/CircaFrax/CodexCompression/releases/download/3.3.3/CodexCompression_v3.3.3.zip" class="download-gold">⬇ Télécharger</a>
-      </li>
-      <li>
-        <a href="https://github.com/CircaFrax/CodexHiddenWind" target="_blank">CodexHiddenWind</a>
-        <a href="https://github.com/CircaFrax/CodexHiddenWind/releases/download/v2.3.1/CodexHiddenWind_v2.3.1.zip" class="download-gold">⬇ Télécharger</a>
-      </li>
-      <li>
-        <a href="https://github.com/CircaFrax/CodexPdf" target="_blank">CodexPdf</a>
-        <a href="https://github.com/CircaFrax/CodexPdf/releases/download/v1.1.1/CodexPdf_v1.1.1.zip" class="download-gold">⬇ Télécharger</a>
-      </li>
-      <li><a href="https://github.com/CircaFrax/CodexMediaMusica" target="_blank">CodexMediaMusica</a></li>
-      <li><a href="https://github.com/CircaFrax/CodexMediaVideo" target="_blank">CodexMediaVideo</a></li>
-    </ul>
-
-    <div class="section-title">⚔ Atelier Fantasy</div>
-    <ul class="checklist">
-      <li>
-        <a href="https://github.com/CircaFrax/CodexForgeJdr" target="_blank">CodexForgeJdr_Web</a>
-        <a href="https://circafrax.github.io/CodexForgeJdr/index.html" class="download-gold">↗  Utiliser</a>
-      </li>
-      <li>
-        <a href="https://github.com/CircaFrax/CodexForgeJdr" target="_blank">CodexForgeJdr</a>
-        <a href="https://github.com/CircaFrax/CodexForgeJdr/releases/download/v1.0/CodexForgeJdr_v1.0.zip" class="download-gold">⬇ Télécharger</a>
-      </li>
-      <li><a href="https://github.com/CircaFrax/CodexMultiverse" target="_blank">CodexMultiverse</a></li>
-    </ul>
-
-  </div>
+<div class="banner"><img src="assets/banniere.png" alt="CircaFrax"></div>
+<div class="content">
+<div class="section-title">Systèmes d'exploitation</div>
+<ul class="checklist">
+<li><a href="https://github.com/CircaFrax/CircaFrax-OS" target="_blank">CircaFrax OS</a></li>
+<li><a href="https://github.com/CircaFrax/Mwangaza-OS" target="_blank">Mwangaza OS</a></li>
+</ul>
+<div class="section-title">Utilitaires</div>
+<ul class="checklist">
+<li><a href="https://github.com/CircaFrax/beta-test" target="_blank">CodexDevBetatest_Web</a><a href="https://circafrax.github.io/beta-test/index.html" class="download-gold">↗ Utiliser</a></li>
+<li><a href="https://github.com/CircaFrax/CodexGenNamae" target="_blank">CodexGenNamae</a><a href="https://github.com/CircaFrax/CodexGenNamae/releases/download/v3.1.1/CodexGenNamae_v3.1.1.zip" class="download-gold">⬇ Télécharger</a></li>
+<li><a href="https://github.com/CircaFrax/CodexGenQrcode" target="_blank">CodexGenQrcode</a><a href="https://github.com/CircaFrax/CodexGenQrcode/releases/download/v0.5.4/CodexGenQrcode_v0.5.4.zip" class="download-gold">⬇ Télécharger</a></li>
+<li><a href="https://github.com/CircaFrax/CodexCompression" target="_blank">CodexCompression</a><a href="https://github.com/CircaFrax/CodexCompression/releases/download/3.3.3/CodexCompression_v3.3.3.zip" class="download-gold">⬇ Télécharger</a></li>
+<li><a href="https://github.com/CircaFrax/CodexHiddenWind" target="_blank">CodexHiddenWind</a><a href="https://github.com/CircaFrax/CodexHiddenWind/releases/download/v2.3.1/CodexHiddenWind_v2.3.1.zip" class="download-gold">⬇ Télécharger</a></li>
+<li><a href="https://github.com/CircaFrax/CodexPdf" target="_blank">CodexPdf</a><a href="https://github.com/CircaFrax/CodexPdf/releases/download/v1.1.1/CodexPdf_v1.1.1.zip" class="download-gold">⬇ Télécharger</a></li>
+<li><a href="https://github.com/CircaFrax/CodexMediaMusica" target="_blank">CodexMediaMusica</a></li>
+<li><a href="https://github.com/CircaFrax/CodexMediaVideo" target="_blank">CodexMediaVideo</a></li>
+</ul>
+<div class="section-title">⚔ Atelier Fantasy</div>
+<ul class="checklist">
+<li><a href="https://github.com/CircaFrax/CodexForgeJdr" target="_blank">CodexForgeJdr_Web</a><a href="https://circafrax.github.io/CodexForgeJdr/index.html" class="download-gold">↗ Utiliser</a></li>
+<li><a href="https://github.com/CircaFrax/CodexForgeJdr" target="_blank">CodexForgeJdr</a><a href="https://github.com/CircaFrax/CodexForgeJdr/releases/download/v1.0/CodexForgeJdr_v1.0.zip" class="download-gold">⬇ Télécharger</a></li>
+<li><a href="https://github.com/CircaFrax/CodexMultiverse" target="_blank">CodexMultiverse</a></li>
+</ul>
+</div>
 </body>
 </html>
