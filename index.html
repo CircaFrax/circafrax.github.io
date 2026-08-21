@@ -21,9 +21,14 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background-color:#0a1228;background-image:url('assets/wallpaper-nuit.webp');background-repeat:no-repeat;background-position:top center;background-size:100% auto;min-height:100vh;font-family:system-ui,sans-serif;color:#e8e6e3}
-.banner{width:100%;display:flex;justify-content:center;padding:28px 20px;background:rgba(10,18,40,0.55)}
+.banner{width:100%;display:flex;justify-content:center;padding:28px 20px 12px;background:rgba(10,18,40,0.55)}
 .banner img{max-width:520px;width:90%;height:auto}
-.content{max-width:680px;margin:40px auto;padding:0 20px 80px}
+.share-wrap{display:flex;justify-content:center;padding:0 20px 18px;background:rgba(10,18,40,0.55)}
+.btn-share{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border:1px solid #d4af37;color:#0a1228;background:#d4af37;border-radius:999px;font-size:14px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.btn-share:hover{background:transparent;color:#d4af37;transform:translateY(-1px);box-shadow:0 4px 18px rgba(212,175,55,0.25)}
+.btn-share:active{transform:translateY(0)}
+.btn-share svg{width:18px;height:18px;flex:none}
+.content{max-width:680px;margin:24px auto;padding:0 20px 80px}
 .section-title{margin:36px 0 14px;padding:0 4px;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#d4af37;display:flex;align-items:center;gap:14px;font-weight:700;opacity:0.9}
 .section-title::before,.section-title::after{content:"";height:1px;flex:1;background:linear-gradient(to right,transparent,rgba(212,175,55,0.35))}
 .section-title::after{background:linear-gradient(to left,transparent,rgba(212,175,55,0.35))}
@@ -36,10 +41,19 @@ body{background-color:#0a1228;background-image:url('assets/wallpaper-nuit.webp')
 .checklist li:hover{background:rgba(212,175,55,0.08)}
 .download-gold{display:inline-flex;align-items:center;gap:6px;padding:5px 8px;border:1px solid #d4af37;color:#d4af37;border-radius:7px;font-size:13px;font-weight:600;text-decoration:none;margin-left:12px;flex:none;white-space:nowrap}
 .download-gold:hover{background:#d4af37;color:#0a1228}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:rgba(10,18,40,0.92);border:1px solid rgba(212,175,55,0.4);color:#e8e6e3;padding:10px 16px;border-radius:999px;font-size:13px;opacity:0;pointer-events:none;transition:all .3s;z-index:99}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 </style>
 </head>
 <body>
 <div class="banner"><img src="assets/banniere.png" alt="CircaFrax"></div>
+<div class="share-wrap">
+  <button class="btn-share" id="btnShare" onclick="shareCircaFrax()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+    Partager CircaFrax
+  </button>
+</div>
+
 <div class="content">
 <div class="section-title">Systèmes d'exploitation</div>
 <ul class="checklist">
@@ -64,5 +78,34 @@ body{background-color:#0a1228;background-image:url('assets/wallpaper-nuit.webp')
 <li><a href="https://github.com/CircaFrax/CodexMultiverse" target="_blank">CodexMultiverse</a></li>
 </ul>
 </div>
+
+<div class="toast" id="toast">Lien copié !</div>
+
+<script>
+function shareCircaFrax(){
+  const shareData = {
+    title: 'CircaFrax - Outils libres, gratuits, hors ligne',
+    text: 'Pour des logiciels libres, hors ligne, choisissez la solution CircaFrax. 100% offline, 0 tracker.',
+    url: 'https://circafrax.github.io/'
+  };
+  
+  if (navigator.share) {
+    navigator.share(shareData).catch(()=>{});
+  } else {
+    // Fallback PC : copie le lien
+    navigator.clipboard.writeText(shareData.url).then(()=>{
+      showToast('Lien copié ! Colle-le où tu veux');
+    }).catch(()=>{
+      showToast('https://circafrax.github.io/');
+    });
+  }
+}
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 2200);
+}
+</script>
 </body>
 </html>
