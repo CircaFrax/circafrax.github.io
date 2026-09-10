@@ -1,111 +1,345 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CircaFrax - Outils libres, gratuits, hors ligne</title>
-<link rel="icon" href="assets/blason.png">
-<meta name="description" content="Suite Codex par CircaFrax : des logiciels libres, gratuits et 100% hors ligne. Pour clubs, amicales, associations et entreprises. 0 tracker, 0 pub, comme en 1998 mais en mieux.">
-<meta property="og:title" content="CircaFrax - Outils libres, gratuits, hors ligne">
-<meta property="og:description" content="Des logiciels qui s'utilisent sans installation. 100% offline, 0 tracker, 0 pub. Pour le lien social : clubs, amicales, associations.">
-<meta property="og:image" content="https://circafrax.github.io/assets/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:url" content="https://circafrax.github.io/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="CircaFrax">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="CircaFrax - Outils libres, gratuits, hors ligne">
-<meta name="twitter:description" content="Des logiciels libres et 100% hors ligne. Par l'équipe CircaFrax.">
-<meta name="twitter:image" content="https://circafrax.github.io/assets/og-image.png">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background-color:#0a1228;background-image:url('assets/wallpaper-nuit.webp');background-repeat:no-repeat;background-position:top center;background-size:100% auto;min-height:100vh;font-family:system-ui,sans-serif;color:#e8e6e3}
-.banner{width:100%;display:flex;justify-content:center;padding:28px 20px 12px;background:rgba(10,18,40,0.55)}
-.banner img{max-width:520px;width:90%;height:auto}
-.share-wrap{display:flex;justify-content:center;padding:0 20px 18px;background:rgba(10,18,40,0.55)}
-.btn-share{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border:1px solid #d4af37;color:#0a1228;background:#d4af37;border-radius:999px;font-size:14px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;cursor:pointer;transition:all .2s}
-.btn-share:hover{background:transparent;color:#d4af37;transform:translateY(-1px);box-shadow:0 4px 18px rgba(212,175,55,0.25)}
-.btn-share:active{transform:translateY(0)}
-.btn-share svg{width:18px;height:18px;flex:none}
-.content{max-width:680px;margin:24px auto;padding:0 20px 80px}
-.section-title{margin:36px 0 14px;padding:0 4px;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#d4af37;display:flex;align-items:center;gap:14px;font-weight:700;opacity:0.9}
-.section-title::before,.section-title::after{content:"";height:1px;flex:1;background:linear-gradient(to right,transparent,rgba(212,175,55,0.35))}
-.section-title::after{background:linear-gradient(to left,transparent,rgba(212,175,55,0.35))}
-.checklist{list-style:none;border:1px solid rgba(212,175,55,0.25);background:rgba(10,18,40,0.7);border-radius:12px;overflow:hidden}
-.checklist li{padding:16px 22px;border-bottom:1px solid rgba(212,175,55,0.12);font-size:17px;display:flex;align-items:center;justify-content:space-between}
-.checklist li:last-child{border-bottom:none}
-.checklist li::before{content:"○ ";color:#d4af37}
-.checklist a{color:#e8e6e3;text-decoration:none;flex:1}
-.checklist a:hover{color:#d4af37}
-.checklist li:hover{background:rgba(212,175,55,0.08)}
-.download-gold{display:inline-flex;align-items:center;gap:6px;padding:5px 8px;border:1px solid #d4af37;color:#d4af37;border-radius:7px;font-size:13px;font-weight:600;text-decoration:none;margin-left:12px;flex:none;white-space:nowrap}
-.download-gold:hover{background:#d4af37;color:#0a1228}
-.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:rgba(10,18,40,0.92);border:1px solid rgba(212,175,55,0.4);color:#e8e6e3;padding:10px 16px;border-radius:999px;font-size:13px;opacity:0;pointer-events:none;transition:all .3s;z-index:99}
-.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CircaFrax — Intelligence architecturée</title>
+
+  <!-- Open Graph / Twitter pour affichage top sur réseaux -->
+  <meta property="og:title" content="CircaFrax — Intelligence architecturée">
+  <meta property="og:description" content="Outils libres, gratuits, hors ligne, made in France. Sans installateur, sans compte.">
+  <meta property="og:image" content="https://circafrax.github.io/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://circafrax.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CircaFrax">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CircaFrax — Intelligence architecturée">
+  <meta name="twitter:description" content="Outils libres, gratuits, hors ligne, made in France. Sans installateur, sans compte.">
+  <meta name="twitter:image" content="https://circafrax.github.io/assets/og-image.png">
+
+  <style>
+    :root {
+      --navy:#0a1228;
+      --gold:#d4af37;
+      --bg:#fcfbf8;
+      --bg-soft:#fffdf3;
+      --bg-paper:#fbfaf7;
+      --border:rgba(10,18,40,0.08);
+      --text:#0a1228;
+      --muted:#6b7280;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+    a{color:inherit;text-decoration:none}
+    .serif{font-family:Georgia, 'Times New Roman', serif;letter-spacing:-0.02em}
+    /* header uniforme */
+    .site-header{
+      position:sticky;top:0;z-index:30;
+      background:rgba(255,255,255,0.88);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--border);
+    }
+    .header-inner{
+      max-width:1100px;margin:0 auto;
+      padding:0 24px;height:68px;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.02em}
+    .logo img{width:32px;height:32px;object-fit:contain;border-radius:8px;background:#fffdf3;border:1px solid var(--border)}
+    .site-nav{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+    .site-nav a{font-size:13.5px;font-weight:500;color:#334155;padding:7px 0;border-bottom:2px solid transparent;transition:.2s}
+    .site-nav a:hover{color:var(--navy)}
+    .site-nav a.active{color:var(--navy);border-bottom-color:var(--gold)}
+    /* hero bulles */
+    .hero{padding:84px 0 64px;background:radial-gradient(120% 120% at 20% 0%,#fffdf3 0%,#fcfbf8 55%,#fbfaf7 100%)}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+    .badge{display:inline-flex;background:var(--navy);color:#fff;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+    /* === AJOUT HERO-TOP + BOUTON PARTAGER === */
+    .hero-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:20px;
+    }
+    .btn-share{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#d4af37;
+      color:#0a1228;
+      border:1.5px solid #d4af37;
+      border-radius:999px;
+      padding:10px 22px;
+      font-size:14px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      cursor:pointer;
+      transition:.2s;
+      line-height:1;
+    }
+    .btn-share:hover{
+      background:transparent;
+      color:#d4af37;
+    }
+    .btn-share:active{transform:scale(.98)}
+    .btn-share svg{width:16px;height:16px}
+    .hero h1{font-size:52px;line-height:.95;margin:0 0 18px}
+    .hero h1 span{color:var(--gold)}
+    .hero p{color:var(--muted);font-size:18px;max-width:560px;margin:0 0 28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:12px;font-weight:600;font-size:14px;background:var(--navy);color:#fff;border:1px solid var(--navy)}
+    .btn-gold{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+    .hero-visual{display:flex;justify-content:center}
+    .hero-visual img{width:100%;max-width:300px;border-radius:24px;background:#fff;box-shadow:0 12px 32px -20px rgba(10,18,40,0.25);border:1px solid var(--border)}
+    /* sections bulles */
+    .section{padding:64px 0}
+    .section h2{font-size:30px;margin:0 0 12px}
+    .lead{color:var(--muted);margin:0 0 36px;max-width:680px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+    .card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:24px;
+      box-shadow:0 12px 32px -20px rgba(10,18,40,0.25);
+    }
+    .card.soft{background:var(--bg-soft)}
+    .card.paper{background:var(--bg-paper)}
+    .card h3{margin:0 0 8px;font-size:17px}
+    .card p{margin:0;color:var(--muted);font-size:14.5px}
+    /* footer V4 trait dégradé */
+    .footer-hr{border:none;height:3px;background:linear-gradient(to right,#0a1228,#d4af37);border-radius:2px;margin:0 0 28px}
+    .site-footer{background:#fbfaf7;border-top:1px solid var(--border);padding:32px 0 44px;margin-top:56px}
+    .footer-grid{display:grid;grid-template-columns:1.4fr .8fr .9fr .9fr;gap:32px;font-size:13.5px;color:var(--muted)}
+    .footer-grid h4{margin:0 0 12px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy)}
+    .footer-grid a{display:block;padding:4px 0}
+    .footer-grid a:hover{color:var(--navy)}
+    .footer-brand img{width:32px;height:32px;border-radius:8px;background:#fff;border:1px solid var(--border);vertical-align:middle;margin-right:8px}
+    /* toast */
+    .toast{
+      position:fixed;left:50%;bottom:28px;
+      transform:translateX(-50%) translateY(20px);
+      background:#0a1228;color:#fff;
+      padding:12px 18px;border-radius:999px;
+      font-size:13.5px;font-weight:600;
+      box-shadow:0 8px 24px rgba(0,0,0,.18);
+      opacity:0;pointer-events:none;transition:.25s;z-index:100;
+    }
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+    @media(max-width:880px){
+      .hero-grid{grid-template-columns:1fr}
+      .header-inner{height:auto;flex-direction:column;align-items:flex-start;gap:10px;padding:14px 24px}
+      .hero h1{font-size:38px}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .hero-top{flex-direction:column;align-items:flex-start}
+    }
+  </style>
 </head>
 <body>
-<div class="banner"><img src="assets/banniere.png" alt="CircaFrax"></div>
-<div class="share-wrap">
-  <button class="btn-share" id="btnShare" onclick="shareCircaFrax()">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-    Partager CircaFrax
-  </button>
-</div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <img src="images/CircaFrax_Logo.png" alt="CircaFrax logo">
+        CircaFrax
+      </a>
+      <nav class="site-nav">
+        <a class="active" href="index.html">Accueil</a>
+        <a href="os.html">OS</a>
+        <a href="codex.html">Codex</a>
+        <a href="eca.html">ECA</a>
+        <a href="equipe.html">Équipe</a>
+        <a href="partenaires.html">Partenaires</a>
+        <a href="bientot.html">Atelier</a>
+      </nav>
+    </div>
+  </header>
 
-<div class="content">
-<div class="section-title">Systèmes d'exploitation</div>
-<ul class="checklist">
-<li><a href="https://github.com/CircaFrax/CircaFrax-OS" target="_blank">CircaFrax OS</a></li>
-<li><a href="https://github.com/CircaFrax/Mwangaza-OS" target="_blank">Mwangaza OS</a></li>
-</ul>
-<div class="section-title">Utilitaires</div>
-<ul class="checklist">
-<li><a href="https://github.com/CircaFrax/beta-test" target="_blank">CodexDevBetatest_Web</a><a href="https://circafrax.github.io/beta-test/index.html" class="download-gold">↗ Utiliser</a></li>
-<li><a href="https://github.com/CircaFrax/CodexPrisme" target="_blank">CodexPrisme</a><a href="https://github.com/CircaFrax/CodexPrisme/releases/download/v1.0.0/CodexPrisme_v1.0.zip" class="download-gold">⬇ Télécharger</a></li>
-<li><a href="https://github.com/CircaFrax/CodexPdf" target="_blank">CodexPdf</a><a href="https://github.com/CircaFrax/CodexPdf/releases/download/v1.1.1/CodexPdf_v1.1.1.zip" class="download-gold">⬇ Télécharger</a></li>
-<li><a href="https://github.com/CircaFrax/CodexGenQrcode" target="_blank">CodexGenQrcode</a><a href="https://github.com/CircaFrax/CodexGenQrcode/releases/download/v0.5.4/CodexGenQrcode_v0.5.4.zip" class="download-gold">⬇ Télécharger</a></li>
-<li><a href="https://github.com/CircaFrax/CodexCompression" target="_blank">CodexCompression</a><a href="https://github.com/CircaFrax/CodexCompression/releases/download/3.5.4/CodexCompression_v3.5.4.zip" class="download-gold">⬇ Télécharger</a></li>
-<li><a href="https://github.com/CircaFrax/CodexHiddenWind" target="_blank">CodexHiddenWind</a><a href="https://github.com/CircaFrax/CodexHiddenWind/releases/download/v2.3.1/CodexHiddenWind_v2.3.1.zip" class="download-gold">⬇ Télécharger</a></li>
-<li><a href="https://github.com/CircaFrax/CodexGenNamae" target="_blank">CodexGenNamae</a><a href="https://github.com/CircaFrax/CodexGenNamae/releases/download/v3.1.1/CodexGenNamae_v3.1.1.zip" class="download-gold">⬇ Télécharger</a></li>
-<li><a href="https://github.com/CircaFrax/CodexMediaVideo" target="_blank">CodexMediaVideo</a></li>
-</ul>
-<div class="section-title">⚔ Atelier Fantasy</div>
-<ul class="checklist">
-<li><a href="https://github.com/CircaFrax/CodexForgeJdr" target="_blank">CodexForgeJdr_Web</a><a href="https://circafrax.github.io/CodexForgeJdr/index.html" class="download-gold">↗ Utiliser</a></li>
-<li><a href="https://github.com/CircaFrax/CodexForgeJdr" target="_blank">CodexForgeJdr</a><a href="https://github.com/CircaFrax/CodexForgeJdr/releases/download/v1.0/CodexForgeJdr_v1.0.zip" class="download-gold">⬇ Télécharger</a></li>
-<li><a href="https://github.com/CircaFrax/CodexMultiverse" target="_blank">CodexMultiverse</a></li>
-</ul>
-</div>
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-top">
+          <span class="badge">Outils libres • Utilisation hors ligne • Made in France</span>
+          <button class="btn-share" onclick="shareCircaFrax()" aria-label="Partager cette page">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            Partager cette page
+          </button>
+        </div>
+        <div class="hero-grid">
+          <div>
+            <h1 class="serif">Circa<span>Frax,</span><br>Admin sans frontières</h1>
+            <p>Outils libres, gratuits, hors ligne, made in France. Sans installateur, sans compte.</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+              <a class="btn" href="os.html">Découvrir l'OS</a>
+              <a class="btn btn-gold" href="codex.html">Logiciels Codex</a>
+              <a class="btn" href="eca.html">Voir les ECA</a>
+            </div>
+            <p style="margin-top:20px">Notre vision : Internet est un lien, l'ordinateur est un outil. Utiliser l'outil et non le lien pour travailler sur vos documents = Sécurité.</p>
+          </div>
+          <div class="hero-visual">
+            <img src="images/Astra.png" alt="Astra – Aura ECA">
+          </div>
+        </div>
+      </div>
+    </section>
 
-<div class="toast" id="toast">Lien copié !</div>
+    <section class="section">
+      <div class="wrap">
+        <h2 class="serif">Trois piliers</h2>
+        <p class="lead">Voici ce que nous développons.</p>
+        <div class="grid">
+          <div class="card soft" style="border-radius:20px">
+            <h3 class="serif">CircaFrax OS</h3>
+            <p>Léger, hors ligne, mode live. Démarre en quelques secondes.</p>
+          </div>
+          <div class="card paper" style="border-radius:22px">
+            <h3 class="serif">Suite Codex</h3>
+            <p>Suite de logiciels développés pour être une alternative libre.</p>
+          </div>
+          <div class="card" style="border-radius:24px">
+            <h3 class="serif">ECA Autonomes</h3>
+            <p>Systèmes d'itelligences artificielles alternatives parle/écoute/explique. Hors ligne. vivantes, sécurisées.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<script>
-function shareCircaFrax(){
-  const shareData = {
-    title: 'CircaFrax - Outils libres, gratuits, hors ligne',
-    text: 'Pour des logiciels libres, hors ligne, choisissez la solution CircaFrax. 100% offline, 0 tracker.',
-    url: 'https://circafrax.github.io/'
-  };
-  
-  if (navigator.share) {
-    navigator.share(shareData).catch(()=>{});
-  } else {
-    // Fallback PC : copie le lien
-    navigator.clipboard.writeText(shareData.url).then(()=>{
-      showToast('Lien copié ! Colle-le où tu veux');
-    }).catch(()=>{
-      showToast('https://circafrax.github.io/');
-    });
-  }
-}
-function showToast(msg){
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'), 2200);
-}
-</script>
+    <section class="section" style="background:var(--bg-soft)">
+      <div class="wrap">
+        <h2 class="serif">CircaFrax OS - Des systèmes légers</h2>
+        <div class="grid" style="margin-top:24px">
+          <div class="card" style="border-radius:20px;background:#fffdf3">
+            <h3 class="serif">CircaFrax OS</h3>
+            <p>CircaFrax OS est un système d'exploitation Arch linux, développé pour être décliné en différentes versions. La principale, base de toute est bien avancée, sa création prends du temps, elle sera disponible comme étant un OS léger, installable sur de vieux ordinateurs.</p>
+            <img src="images/CircaFrax_Logo.png" alt="Astra Aura" style="margin-top:16px;width:96px;height:96px;border-radius:14px;border:1px solid var(--border);background:#fff">
+          </div>
+          <div class="card" style="border-radius:20px;background:#fbfaf7">
+            <h3 class="serif">Mwangaza OS</h3>
+            <p>Dérivé de CircaFrax OS, Mwangaza est une base en construction, utilisé en tant que OS kiosque de savoir, son utilité : être installé sur les ordinateurs les moins puissants, destinés aux pays pauvres, L'iso sera disponible et maintenu pour permettre a tout le monde de disposer un système kiosque disposant d'un savoir utile et d'outils libres, fonctionnant sans internet.</p>
+            <img src="images/MwangazaOS.png" alt="Zmapp AI" style="margin-top:16px;width:96px;height:96px;border-radius:14px;border:1px solid var(--border);background:#fff">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:var(--bg-soft)">
+      <div class="wrap">
+        <h2 class="serif">Suite Codex - Logiciels libres</h2>
+        <div class="grid" style="margin-top:24px">
+          <div class="card" style="border-radius:20px;background:#fffdf3">
+            <h3 class="serif">Codex public</h3>
+            <p>Nous vous proposont une suite de logiciels libres, portables, et autonomes. Vous télécharger le Codex, sans installateur utilisable immédiatements. Aucune connection internet n'est requise. Protégez vos données en travaillant Hors ligne!</p>
+          </div>
+          <div class="card" style="border-radius:20px;background:#fbfaf7">
+            <h3 class="serif">Codex privés</h3>
+            <p>Contrairement aux Codex qui sont publiés, nous travaillons avec une armada de Codex de développeurs, qui simplifient leur fabrication. 100% autonome pour la programmation, ces outils sont gage de confidentialité et de maitrise du code.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:var(--bg-soft)">
+      <div class="wrap">
+        <h2 class="serif">ECA autonomes — sécurisée, non publique</h2>
+        <div class="grid" style="margin-top:24px">
+          <div class="card" style="border-radius:20px;background:#fffdf3">
+            <h3 class="serif">Lovelace — #1 Architecte</h3>
+            <p>Hors ligne et autonome, sans installateur, avec Aura l'ECA perso d'Astra qui parle, écoute, explique. Mémoire propre, YAML, créative. fondé grâce à la puissance d'un collègue IA en ligne, désormais autonome.</p>
+            <img src="images/Aura.png" alt="Astra Aura" style="margin-top:16px;width:96px;height:96px;border-radius:14px;border:1px solid var(--border);background:#fff">
+          </div>
+          <div class="card" style="border-radius:20px;background:#fbfaf7">
+            <h3 class="serif">**** — #2 Exécutante</h3>
+            <p>Architecture privée 110Go, programmation textuelle, dépannage terrain, latence faible. Hors ligne sécurisé non public.</p>
+            <img src="images/Compa.png" alt="Zmapp AI" style="margin-top:16px;width:96px;height:96px;border-radius:14px;border:1px solid var(--border);background:#fff">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <hr class="footer-hr">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4><img src="images/CircaFrax_Logo.png" alt="logo">CircaFrax</h4>
+          <p>Outils libres, gratuits, hors ligne, made in France.</p>
+          <p style="margin-top:12px">© 2026 CircaFrax<br><a href="mentions-legales.html">Mentions légales</a></p>
+        </div>
+        <div>
+          <h4>Pages</h4>
+          <a href="index.html">Accueil</a>
+          <a href="os.html">Os</a>
+          <a href="codex.html">Codex</a>
+          <a href="eca.html">ECA</a>
+          <a href="equipe.html">Equipe</a>
+          <a href="partenaires.html">Partenaires</a>
+        </div>
+        <div>
+          <h4>Liens rapides</h4>
+          <a href="https://github.com/CircaFrax" target="_blank" rel="noopener">GitHub</a>
+          <a href="os.html">Os</a>
+          <a href="codex.html">Codex</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Soutien</h4>
+          <a href="bientot.html">Section design</a>
+          <a href="bientot.html">Donation OpenCollective</a>
+          <a href="bientot.html">Buy me a coffee</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+  <script>
+    function showToast(msg){
+      const t=document.getElementById('toast');
+      if(!t) return;
+      t.textContent=msg;
+      t.classList.add('show');
+      clearTimeout(window._toastTimer);
+      window._toastTimer=setTimeout(()=>t.classList.remove('show'),2600);
+    }
+    async function shareCircaFrax(){
+      const shareData={
+        title: "CircaFrax — Intelligence architecturée",
+        text: "Outils libres, gratuits, hors ligne, made in France. Sans installateur, sans compte.",
+        url: "https://circafrax.github.io/"
+      };
+      if(navigator.share){
+        try{
+          await navigator.share(shareData);
+          showToast("Partagé !");
+          return;
+        }catch(e){
+          if(e && e.name==="AbortError") return;
+        }
+      }
+      try{
+        await navigator.clipboard.writeText(shareData.url);
+        showToast("Lien copié dans le presse-papier !");
+      }catch{
+        showToast(shareData.url);
+      }
+    }
+  </script>
 </body>
 </html>
