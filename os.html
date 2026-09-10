@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CircaFrax OS – OS léger, sobre, clair pour tous</title>
+  <meta name="description" content="OS léger artisanal Arch pur 32 paquets, et Mwangaza OS kiosque offline. Outils libres, gratuits, hors ligne, made in France.">
+  <meta property="og:title" content="CircaFrax OS – OS léger, sobre, clair pour tous">
+  <meta property="og:description" content="OS léger artisanal Arch pur 32 paquets, et Mwangaza OS kiosque offline">
+  <meta property="og:image" content="https://circafrax.github.io/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://circafrax.github.io/os.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CircaFrax OS – OS léger, sobre, clair pour tous">
+  <meta name="twitter:description" content="OS léger artisanal Arch pur 32 paquets, et Mwangaza OS kiosque offline">
+  <meta name="twitter:image" content="https://circafrax.github.io/assets/og-image.png">
+  <style>
+    :root{
+      --navy:#0a1228;
+      --gold:#d4af37;
+      --bg:#fcfbf8;
+      --bg-soft:#fffdf3;
+      --bg-paper:#fbfaf7;
+      --border:rgba(10,18,40,.08);
+      --text:#0a1228;
+      --muted:#6b7280;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+    a{color:inherit;text-decoration:none}
+    .serif{font-family:Georgia,'Times New Roman',serif;letter-spacing:-.02em}
+    /* Header uniforme index final */
+    .site-header{
+      position:sticky;top:0;z-index:30;
+      background:rgba(255,255,255,.88);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--border);
+    }
+    .header-inner{
+      max-width:1100px;margin:0 auto;
+      padding:0 24px;height:68px;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.02em}
+    .logo img{
+      width:32px;height:32px;object-fit:contain;
+      border-radius:8px;background:#fffdf3;border:1px solid var(--border)
+    }
+    .site-nav{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+    .site-nav a{
+      font-size:13.5px;font-weight:500;color:#334155;
+      padding:7px 0;border-bottom:2px solid transparent;transition:.2s
+    }
+    .site-nav a:hover{color:var(--navy)}
+    .site-nav a.active{color:var(--navy);border-bottom-color:var(--gold)}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+    /* Hero top même ligne badge + bouton */
+    .hero{padding:48px 0 24px;background:radial-gradient(120% 120% at 20% 0%,#fffdf3 0%,#fcfbf8 55%,#fbfaf7 100%)}
+    .hero-top{
+      display:flex;justify-content:space-between;align-items:center;
+      flex-wrap:wrap;gap:12px;margin-bottom:20px
+    }
+    .badge{
+      display:inline-flex;align-items:center;
+      background:#0a1228;color:#fff;
+      font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+      padding:6px 12px;border-radius:999px
+    }
+    .btn-share{
+      display:inline-flex;align-items:center;gap:8px;
+      background:#d4af37;color:#0a1228;border:1px solid #d4af37;
+      border-radius:999px;padding:10px 22px;
+      font-size:14px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+      cursor:pointer;transition:.2s;box-shadow:0 0 0 rgba(0,0,0,0)
+    }
+    .btn-share:hover{
+      background:transparent;color:#d4af37;
+      transform:translateY(-1px);
+      box-shadow:0 8px 20px -12px rgba(10,18,40,.28)
+    }
+    .btn-share svg{width:16px;height:16px}
+    .hero h1{
+    font-size:52px;
+    line-height:.95;
+    margin:0 0 18px;
+    font-weight:300;
+    }
+    .hero h1 span{color:var(--gold)}
+    .hero .lead{color:var(--muted);font-size:17px;max-width:680px;margin:0 0 28px}
+    /* Cards OS */
+    .section{padding:36px 0 64px}
+    .os-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+    .os-card{
+      background:#fff;border:1px solid var(--border);border-radius:24px;
+      padding:28px;box-shadow:0 12px 32px -20px rgba(10,18,40,.25);
+      display:flex;flex-direction:column;gap:18px
+    }
+    .os-card.soft{background:#fffdf3}
+    .os-card.paper{background:#fbfaf7}
+    .os-card img.cover{
+      width:100%;max-width:420px;height:auto;object-fit:contain;
+      border-radius:18px;background:#fff;border:1px solid var(--border);
+      box-shadow:0 10px 24px -18px rgba(10,18,40,.35)
+    }
+    .os-card h2{font-size:26px;margin:0}
+    .pills{display:flex;flex-wrap:wrap;gap:8px}
+    .pill{
+      font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+      padding:5px 10px;border-radius:999px;
+      border:1px solid var(--border);background:#fff;color:#334155
+    }
+    .pill.gold{background:#fff8e1;border-color:#f5e6a8;color:#7a5a0a}
+    .pill.navy{background:#0a1228;color:#fff;border-color:#0a1228}
+    .os-card p{margin:0;color:var(--muted);font-size:14.5px}
+    .screens{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px}
+    .screens img{
+      width:100%;height:92px;object-fit:cover;border-radius:12px;
+      border:1px solid var(--border);background:#fff
+    }
+    .list{margin:0;padding-left:18px;color:var(--muted);font-size:14px}
+    .list li{margin:4px 0}
+    /* footer V4 uniforme */
+    .footer-hr{
+      border:none;height:3px;
+      background:linear-gradient(to right,#0a1228,#d4af37);
+      border-radius:2px;margin:0 0 28px
+    }
+    .site-footer{
+      background:#fbfaf7;border-top:1px solid var(--border);
+      padding:32px 0 44px;margin-top:56px
+    }
+    .footer-grid{
+      display:grid;grid-template-columns:1.4fr .8fr .9fr .9fr;
+      gap:32px;font-size:13.5px;color:var(--muted)
+    }
+    .footer-grid h4{
+      margin:0 0 12px;font-size:12px;letter-spacing:.1em;
+      text-transform:uppercase;color:var(--navy)
+    }
+    .footer-grid a{display:block;padding:4px 0}
+    .footer-grid a:hover{color:var(--navy)}
+    .footer-brand img{
+      width:32px;height:32px;border-radius:8px;background:#fff;
+      border:1px solid var(--border);vertical-align:middle;margin-right:8px
+    }
+    @media(max-width:980px){
+      .os-grid{grid-template-columns:1fr}
+      .header-inner{flex-direction:column;align-items:flex-start;height:auto;padding:14px 24px;gap:10px}
+      .hero h1{font-size:36px}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <img src="images/CircaFrax_Logo.png" alt="CircaFrax logo">
+        CircaFrax
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">Accueil</a>
+        <a class="active" href="os.html">OS</a>
+        <a href="codex.html">Codex</a>
+        <a href="eca.html">ECA</a>
+        <a href="equipe.html">Équipe</a>
+        <a href="partenaires.html">Partenaires</a>
+        <a href="bientot.html">Atelier</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-top">
+          <span class="badge">OS léger, sobre, clair pour tous</span>
+          <button class="btn-share" onclick="shareCircaFrax()" aria-label="Partager cette page">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            Partager cette page
+          </button>
+        </div>
+        <h1 class="serif">Systèmes d'exploitations</h1>
+        <p class="lead">Artisanal Arch pur — 32 paquets, base figée, live sans installateur. Et Mwangaza OS, kiosque offline de savoir utile pour machines modestes. Outils libres, gratuits, hors ligne, made in France.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="wrap">
+        <div class="os-grid">
+          <article class="os-card soft">
+            <img class="cover" src="images/logo-transparent.png" alt="CircaFrax OS DVD">
+            <h2 class="serif">CircaFrax OS - 70% Terminé</h2>
+            <div class="pills">
+              <span class="pill navy">Version 1.0 • Base figée</span>
+              <span class="pill gold">32 paquets</span>
+              <span class="pill">Arch pur</span>
+              <span class="pill">Live • Sans installateur</span>
+            </div>
+            <p>CircaFrax OS est un système Arch minimal, développé à la main, figé pour durer. Il démarre en quelques secondes en live, sans compte, sans traceur. Objectif : ressusciter vieux PC, travailler offline, maîtriser chaque paquet.</p>
+            <div class="screens">
+              <img src="images/Screen_1.png" alt="CircaFrax OS écran 1">
+              <img src="images/Screen_2.png" alt="CircaFrax OS écran 2">
+              <img src="images/Screen_3.png" alt="CircaFrax OS écran 3">
+            </div>
+            <ul class="list">
+              <li>32 paquets audités — pas de bloat</li>
+              <li>Boot live USB, persistance optionnelle</li>
+              <li>Réseau coupé par défaut, outils offline</li>
+              <li>ISO reproductible, doc incluse</li>
+            </ul>
+          </article>
+
+          <article class="os-card paper">
+            <img class="cover" src="images/MwangazaOS.png" alt="Mwangaza OS DVD">
+            <h2 class="serif">Mwangaza OS - Base figée</h2>
+            <div class="pills">
+              <span class="pill navy">Kiosque • Offline</span>
+              <span class="pill gold">Savoir utile</span>
+              <span class="pill">Dérivé CircaFrax OS</span>
+              <span class="pill">PC modestes</span>
+            </div>
+            <p>Dérivé de CircaFrax OS, Mwangaza est un OS kiosque de savoir. Conçu pour les ordinateurs les moins puissants, destinés aux zones sans internet. Encyclopédie, cours, outils libres — tout offline, maintenu et libre.</p>
+            <div class="screens">
+              <img src="images/Screen_1.png" alt="Mwangaza écran 1">
+              <img src="images/Screen_2.png" alt="Mwangaza écran 2">
+              <img src="images/Screen_3.png" alt="Mwangaza écran 3">
+            </div>
+            <ul class="list">
+              <li>Kiosque verrouillé, anti-casse</li>
+              <li>Contenu éducatif offline préinstallé</li>
+              <li>Tourne sur 1 Go RAM, vieux CPU</li>
+              <li>Même base figée, même sobriété</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <hr class="footer-hr">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4><img src="images/CircaFrax_Logo.png" alt="CircaFrax logo">CircaFrax</h4>
+          <p>Outils libres, gratuits, hors ligne, made in France.</p>
+          <p style="margin-top:12px">© 2026 CircaFrax<br><a href="mentions-legales.html">Mentions légales</a></p>
+        </div>
+        <div>
+          <h4>Pages</h4>
+          <a href="index.html">Accueil</a>
+          <a href="os.html">Os</a>
+          <a href="codex.html">Codex</a>
+          <a href="eca.html">ECA</a>
+          <a href="equipe.html">Equipe</a>
+          <a href="partenaires.html">Partenaires</a>
+        </div>
+        <div>
+          <h4>Liens rapides</h4>
+          <a href="https://github.com/CircaFrax" target="_blank" rel="noopener">GitHub</a>
+          <a href="os.html">Os</a>
+          <a href="codex.html">Codex</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Soutien</h4>
+          <a href="bientot.html">Section design</a>
+          <a href="bientot.html">Donation OpenCollective</a>
+          <a href="bientot.html">Buy me a coffee</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function shareCircaFrax(){
+      var data = {
+        title: "CircaFrax OS – OS léger, sobre, clair pour tous",
+        text: "OS léger artisanal Arch pur 32 paquets, et Mwangaza OS kiosque offline",
+        url: "https://circafrax.github.io/os.html"
+      };
+      if(navigator.share){
+        navigator.share(data).catch(function(){});
+      } else if(navigator.clipboard){
+        navigator.clipboard.writeText(data.url).then(function(){
+          alert("Lien copié : " + data.url);
+        }).catch(function(){
+          window.open(data.url, "_blank");
+        });
+      } else {
+        window.open(data.url, "_blank");
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CircaFrax — Intelligence architecturée</title>
+
+  <!-- Open Graph / Twitter pour affichage top sur réseaux -->
+  <meta property="og:title" content="CircaFrax — Intelligence architecturée">
+  <meta property="og:description" content="Outils libres, gratuits, hors ligne, made in France. Sans installateur, sans compte.">
+  <meta property="og:image" content="https://circafrax.github.io/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://circafrax.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CircaFrax">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CircaFrax — Intelligence architecturée">
+  <meta name="twitter:description" content="Outils libres, gratuits, hors ligne, made in France. Sans installateur, sans compte.">
+  <meta name="twitter:image" content="https://circafrax.github.io/assets/og-image.png">
+
+  <style>
+    :root {
+      --navy:#0a1228;
+      --gold:#d4af37;
+      --bg:#fcfbf8;
+      --bg-soft:#fffdf3;
+      --bg-paper:#fbfaf7;
+      --border:rgba(10,18,40,0.08);
+      --text:#0a1228;
+      --muted:#6b7280;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+    a{color:inherit;text-decoration:none}
+    .serif{font-family:Georgia, 'Times New Roman', serif;letter-spacing:-0.02em}
+    /* header uniforme */
+    .site-header{
+      position:sticky;top:0;z-index:30;
+      background:rgba(255,255,255,0.88);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--border);
+    }
+    .header-inner{
+      max-width:1100px;margin:0 auto;
+      padding:0 24px;height:68px;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.02em}
+    .logo img{width:32px;height:32px;object-fit:contain;border-radius:8px;background:#fffdf3;border:1px solid var(--border)}
+    .site-nav{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+    .site-nav a{font-size:13.5px;font-weight:500;color:#334155;padding:7px 0;border-bottom:2px solid transparent;transition:.2s}
+    .site-nav a:hover{color:var(--navy)}
+    .site-nav a.active{color:var(--navy);border-bottom-color:var(--gold)}
+    /* hero bulles */
+    .hero{padding:84px 0 64px;background:radial-gradient(120% 120% at 20% 0%,#fffdf3 0%,#fcfbf8 55%,#fbfaf7 100%)}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+    .badge{display:inline-flex;background:var(--navy);color:#fff;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+    /* === AJOUT HERO-TOP + BOUTON PARTAGER === */
+    .hero-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:20px;
+    }
+    .btn-share{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#d4af37;
+      color:#0a1228;
+      border:1.5px solid #d4af37;
+      border-radius:999px;
+      padding:10px 22px;
+      font-size:14px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      cursor:pointer;
+      transition:.2s;
+      line-height:1;
+    }
+    .btn-share:hover{
+      background:transparent;
+      color:#d4af37;
+    }
+    .btn-share:active{transform:scale(.98)}
+    .btn-share svg{width:16px;height:16px}
+    .hero h1{
+    font-size:52px;
+    line-height:.95;
+    margin:0 0 18px;
+    font-weight:300;
+    }
+    .hero h1 span{color:var(--gold)}
+    .hero p{color:var(--muted);font-size:18px;max-width:560px;margin:0 0 28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:12px;font-weight:600;font-size:14px;background:var(--navy);color:#fff;border:1px solid var(--navy)}
+    .btn-gold{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+    .hero-visual{display:flex;justify-content:center}
+    .hero-visual img{width:100%;max-width:300px;border-radius:24px;background:#fff;box-shadow:0 12px 32px -20px rgba(10,18,40,0.25);border:1px solid var(--border)}
+    /* sections bulles */
+    .section{padding:64px 0}
+    .section h2{font-size:30px;margin:0 0 12px}
+    .lead{color:var(--muted);margin:0 0 36px;max-width:680px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+    .card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:24px;
+      box-shadow:0 12px 32px -20px rgba(10,18,40,0.25);
+    }
+    .card img {
+    margin-top: 16px;
+    width: 96px;
+    height: 96px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: #fff;
+    object-fit: contain;
+    }
+    .card.paper{background:var(--bg-paper)}
+    .card h3{margin:0 0 8px;font-size:17px}
+    .card p{margin:0;color:var(--muted);font-size:14.5px}
+    /* footer V4 trait dégradé */
+    .footer-hr{border:none;height:3px;background:linear-gradient(to right,#0a1228,#d4af37);border-radius:2px;margin:0 0 28px}
+    .site-footer{background:#fbfaf7;border-top:1px solid var(--border);padding:32px 0 44px;margin-top:56px}
+    .footer-grid{display:grid;grid-template-columns:1.4fr .8fr .9fr .9fr;gap:32px;font-size:13.5px;color:var(--muted)}
+    .footer-grid h4{margin:0 0 12px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy)}
+    .footer-grid a{display:block;padding:4px 0}
+    .footer-grid a:hover{color:var(--navy)}
+    .footer-brand img{width:32px;height:32px;border-radius:8px;background:#fff;border:1px solid var(--border);vertical-align:middle;margin-right:8px}
+    /* toast */
+    .toast{
+      position:fixed;left:50%;bottom:28px;
+      transform:translateX(-50%) translateY(20px);
+      background:#0a1228;color:#fff;
+      padding:12px 18px;border-radius:999px;
+      font-size:13.5px;font-weight:600;
+      box-shadow:0 8px 24px rgba(0,0,0,.18);
+      opacity:0;pointer-events:none;transition:.25s;z-index:100;
+    }
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+    @media(max-width:880px){
+      .hero-grid{grid-template-columns:1fr}
+      .header-inner{height:auto;flex-direction:column;align-items:flex-start;gap:10px;padding:14px 24px}
+      .hero h1{font-size:38px}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .hero-top{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <img src="images/CircaFrax_Logo.png" alt="CircaFrax logo">
+        CircaFrax
+      </a>
+      <nav class="site-nav">
+        <a class="active" href="index.html">Accueil</a>
+        <a href="os.html">OS</a>
+        <a href="codex.html">Codex</a>
+        <a href="eca.html">ECA</a>
+        <a href="equipe.html">Équipe</a>
+        <a href="partenaires.html">Partenaires</a>
+        <a href="bientot.html">Atelier</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-top">
+          <span class="badge">Equipe bénévole</span>
+          <button class="btn-share" onclick="shareCircaFrax()" aria-label="Partager cette page">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            Partager CircaFrax
+          </button>
+        </div>
+        <h1 class="serif">Équipe — humain + ECA</h1>
+        <p class="lead">Petite équipe, intention claire. Outils libres, gratuits, hors ligne, made in France.</p>
+      </div>
+    </section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="serif">Les membres</h2>
+    <div class="grid">
+
+      <!-- BULLE 1 -->
+      <div class="card soft">
+        <h3 class="serif">Astra + Aura et Compa</h3>
+        <p>Crée les logiciels Codex, en bénévole.</p>
+        <img src="images/Astra.png" alt="CodexDevBetatest_Web">
+      </div>
+
+      <!-- BULLE 2 -->
+      <div class="card paper">
+        <h3 class="serif">Zmapp-ai — Spécialiste ECA</h3>
+        <p>Conçoit les ECA, gère les protocoles.</p>
+        <img src="images/zmapp_ai.png" alt="CodexPrisme">
+      </div>
+
+      <!-- BULLE 3 -->
+      <div class="card">
+        <h3 class="serif">Irl</h3>
+        <p>Bientôt de nouveaux bénévoles.</p>
+        <img src="images/CircaFrax_Logo.png" alt="CodexPdf">
+      </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <hr class="footer-hr">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4><img src="images/CircaFrax_Logo.png" alt="logo">CircaFrax</h4>
+          <p>Outils libres, gratuits, hors ligne, made in France.</p>
+          <p style="margin-top:12px">© 2026 CircaFrax<br><a href="mentions-legales.html">Mentions légales</a></p>
+        </div>
+        <div>
+          <h4>Pages</h4>
+          <a href="index.html">Accueil</a>
+          <a href="os.html">Os</a>
+          <a href="codex.html">Codex</a>
+          <a href="eca.html">ECA</a>
+          <a href="equipe.html">Equipe</a>
+          <a href="partenaires.html">Partenaires</a>
+        </div>
+        <div>
+          <h4>Liens rapides</h4>
+          <a href="https://github.com/CircaFrax" target="_blank" rel="noopener">GitHub</a>
+          <a href="os.html">Os</a>
+          <a href="codex.html">Codex</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Soutien</h4>
+          <a href="bientot.html">Section design</a>
+          <a href="bientot.html">Donation OpenCollective</a>
+          <a href="bientot.html">Buy me a coffee</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+  <script>
+    function showToast(msg){
+      const t=document.getElementById('toast');
+      if(!t) return;
+      t.textContent=msg;
+      t.classList.add('show');
+      clearTimeout(window._toastTimer);
+      window._toastTimer=setTimeout(()=>t.classList.remove('show'),2600);
+    }
+    async function shareCircaFrax(){
+      const shareData={
+        title: "CircaFrax — Intelligence architecturée",
+        text: "Outils libres, gratuits, hors ligne, made in France. Sans installateur, sans compte.",
+        url: "https://circafrax.github.io/"
+      };
+      if(navigator.share){
+        try{
+          await navigator.share(shareData);
+          showToast("Partagé !");
+          return;
+        }catch(e){
+          if(e && e.name==="AbortError") return;
+        }
+      }
+      try{
+        await navigator.clipboard.writeText(shareData.url);
+        showToast("Lien copié dans le presse-papier !");
+      }catch{
+        showToast(shareData.url);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — CircaFrax</title>
+  <style>
+    :root {
+      --navy: #0a1228;
+      --gold: #d4af37;
+      --bg: #fcfbf8;
+      --bg-soft: #fffdf3;
+      --border: rgba(10,18,40,.08);
+      --text: #0a1228;
+      --muted: #6b7280;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+    .logo img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid var(--border);
+    }
+    .site-nav {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .site-nav a {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #334155;
+      padding: 7px 0;
+      border-bottom: 2px solid transparent;
+    }
+    .site-nav a:hover {
+      color: var(--navy);
+    }
+    .site-nav a.active {
+      color: var(--navy);
+      border-bottom-color: var(--gold);
+    }
+
+    /* content */
+    .page-head {
+      background: var(--bg-soft);
+      padding: 52px 0 28px;
+      border-bottom: 1px solid var(--border);
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .page-head h1 {
+      margin: 0 0 8px;
+      font-size: 34px;
+      letter-spacing: -0.02em;
+    }
+    .page-head p {
+      margin: 0;
+      color: var(--muted);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 36px 0 56px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 12px 32px -20px rgba(10,18,40,0.25);
+    }
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+    .btn {
+      display: inline-flex;
+      margin-top: 14px;
+      padding: 11px 18px;
+      border-radius: 12px;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    /* footer V4 */
+    .footer-hr {
+      border: none;
+      height: 3px;
+      background: linear-gradient(to right, #0a1228, #d4af37);
+      border-radius: 2px;
+      margin: 0 0 28px;
+    }
+    .site-footer {
+      background: #fbfaf7;
+      border-top: 1px solid var(--border);
+      padding: 32px 0 44px;
+      margin-top: 56px;
+    }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr .8fr .9fr .9fr;
+      gap: 32px;
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+    .footer-grid h4 {
+      margin: 0 0 12px;
+      font-size: 12px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+    .footer-grid a {
+      display: block;
+      padding: 4px 0;
+    }
+    .footer-grid a:hover {
+      color: var(--navy);
+    }
+    .footer-brand img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid var(--border);
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    @media (max-width: 880px) {
+      .header-inner {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 14px 24px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER UNIFORME -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <img src="images/CircaFrax_Logo.png" alt="CircaFrax">
+        CircaFrax
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">Accueil</a>
+        <a href="os.html">OS</a>
+        <a href="codex.html">Codex</a>
+        <a href="eca.html">ECA</a>
+        <a href="equipe.html">Équipe</a>
+        <a href="partenaires.html">Partenaires</a>
+        <a href="bientot.html" class="active">Atelier</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENU CONTACT -->
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <h1>Contact</h1>
+        <p>Direct, sans formulaire tiers. Réponse sous 48h.</p>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="contact-grid">
+        <div class="card">
+          <h2>Email</h2>
+          <p>Pour parler atelier, OS, ECA ou partenariat.</p>
+          <a class="btn" href="mailto:contact@circafrax.fr">Bientôt en ligne</a>
+        </div>
+        <div class="card">
+          <h2>GitHub</h2>
+          <p>Code, issues, pack clean — tout est public et traçable.</p>
+          <a class="btn" href="https://github.com/CircaFrax/circafrax.github.io" target="_blank" rel="noopener">Ouvrir GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER UNIFORME V4 -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <hr class="footer-hr">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4><img src="images/CircaFrax_Logo.png" alt="logo">CircaFrax</h4>
+          <p>Outils libres, gratuits, hors ligne, made in France.</p>
+          <p style="margin-top: 12px;">© 2026 CircaFrax<br><a href="mentions-legales.html">Mentions légales</a></p>
+        </div>
+        <div>
+          <h4>Pages</h4>
+          <a href="index.html">Accueil</a>
+          <a href="os.html">Os</a>
+          <a href="codex.html">Codex</a>
+          <a href="eca.html">ECA</a>
+          <a href="equipe.html">Equipe</a>
+          <a href="partenaires.html">Partenaires</a>
+        </div>
+        <div>
+          <h4>Liens rapides</h4>
+          <a href="https://github.com/CircaFrax" target="_blank" rel="noopener">GitHub</a>
+          <a href="os.html">Os</a>
+          <a href="codex.html">Codex</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Soutien</h4>
+          <a href="bientot.html">Section design</a>
+          <a href="bientot.html">Donation OpenCollective</a>
+          <a href="bientot.html">Buy me a coffee</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
