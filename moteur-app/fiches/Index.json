@@ -1,4 +1,19 @@
 [
+    {
+    "id": "archive.org",
+    "nom": "Internet Archive",
+    "url": "https://archive.org",
+    "resume": "Bibliothèque numérique mondiale à but non lucratif. Archives du web, livres, films et musiques libres. Projet de préservation du savoir depuis 1996.",
+    "tags": [
+      "savoir",
+      "archive",
+      "bibliotheque",
+      "open-data",
+      "histoire-web"
+    ],
+    "score": "A+",
+    "date_validation": "2026-10-15"
+  },
   {
     "id": "impots.gouv.fr",
     "nom": "Impôts.gouv.fr",
