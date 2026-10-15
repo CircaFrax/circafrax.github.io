@@ -1,0 +1,27 @@
+{
+  "id": "impots.gouv.fr",
+  "nom": "Impôts.gouv.fr",
+  "url": "https://www.impots.gouv.fr",
+  "resume": "Service officiel de la Direction Générale des Finances Publiques. Permet de déclarer ses revenus, payer, consulter ses documents et gérer son espace personnel. Référence de confiance pour toute démarche fiscale.",
+  "tags": [
+    "service-public",
+    "impots",
+    "administration",
+    "finances"
+  ],
+  "date_validation": "2026-10-15",
+  "score": "A+",
+  "rapport_public": {
+    "https": true,
+    "hsts": true,
+    "csp": true,
+    "trackers": 0,
+    "cookies": "nécessaires uniquement",
+    "verdict": "Site institutionnel exemplaire. Sobre, rapide, 0 tracker publicitaire. Chiffrement complet, en-têtes de sécurité présents. Référence de confiance."
+  },
+  "mentions": {
+    "type": "favori éditorial",
+    "non_exhaustif": true,
+    "resume_original": true
+  }
+}
