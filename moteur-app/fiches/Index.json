@@ -1,0 +1,45 @@
+[
+  {
+    "id": "impots.gouv.fr",
+    "nom": "Impôts.gouv.fr",
+    "url": "https://www.impots.gouv.fr",
+    "resume": "Service officiel de la Direction Générale des Finances Publiques. Permet de déclarer ses revenus, payer, consulter ses documents et gérer son espace personnel. Référence de confiance pour toute démarche fiscale.",
+    "tags": [
+      "service-public",
+      "impots",
+      "administration",
+      "finances"
+    ],
+    "score": "A+",
+    "date_validation": "2026-10-15"
+  },
+  {
+    "id": "wikipedia.org",
+    "nom": "Wikipédia",
+    "url": "https://fr.wikipedia.org",
+    "resume": "Encyclopédie collaborative libre et ouverte. Contenu rédigé et vérifié par une communauté, avec sources. Accès à la connaissance sans publicité ni traçage.",
+    "tags": [
+      "savoir",
+      "encyclopedie",
+      "open-data",
+      "education"
+    ],
+    "score": "A+",
+    "date_validation": "2026-10-15"
+  },
+  {
+    "id": "bison-fute.gouv.fr",
+    "nom": "Bison Futé",
+    "url": "https://www.bison-fute.gouv.fr",
+    "resume": "Service officiel du Ministère de la Transition Écologique pour anticiper le trafic routier. Prévisions, conseils, état des routes. Sans publicité, données publiques.",
+    "tags": [
+      "service-public",
+      "trafic",
+      "route",
+      "transport",
+      "gouvernement"
+    ],
+    "score": "A",
+    "date_validation": "2026-10-15"
+  }
+]
