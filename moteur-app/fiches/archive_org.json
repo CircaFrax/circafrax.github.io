@@ -1,0 +1,15 @@
+{
+  "id": "archive.org",
+  "nom": "Internet Archive",
+  "url": "https://archive.org",
+  "resume": "Bibliothèque numérique mondiale à but non lucratif. Archives du web, livres, films et musiques libres. Projet de préservation du savoir depuis 1996.",
+  "tags": ["savoir", "archive", "bibliotheque", "open-data", "histoire-web"],
+  "date_validation": "2026-10-15",
+  "score": "A+",
+  "rapport_public": {
+    "https": true,
+    "hsts": true,
+    "trackers": 0,
+    "verdict": "Modèle de mission d'intérêt général. Sobre, peu de trackers, pas de pub agressive. Référence de confiance."
+  }
+}
