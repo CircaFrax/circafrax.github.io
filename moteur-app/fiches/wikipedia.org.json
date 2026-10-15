@@ -1,0 +1,26 @@
+{
+  "id": "wikipedia.org",
+  "nom": "Wikipédia",
+  "url": "https://fr.wikipedia.org",
+  "resume": "Encyclopédie collaborative libre et ouverte. Contenu rédigé et vérifié par une communauté, avec sources. Accès à la connaissance sans publicité ni traçage.",
+  "tags": [
+    "savoir",
+    "encyclopedie",
+    "open-data",
+    "education"
+  ],
+  "date_validation": "2026-10-15",
+  "score": "A+",
+  "rapport_public": {
+    "https": true,
+    "hsts": true,
+    "csp": true,
+    "trackers": 0,
+    "cookies": "nécessaires uniquement",
+    "verdict": "Modèle de sobriété. Pas de publicité, pas de tracker tiers. Contenu sous licence libre. Référence mondiale de confiance."
+  },
+  "mentions": {
+    "type": "favori éditorial",
+    "non_exhaustif": true
+  }
+}

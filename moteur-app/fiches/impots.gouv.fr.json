@@ -1,0 +1,22 @@
+{
+  "id": "impots.gouv.fr",
+  "nom": "Impôts.gouv.fr",
+  "url": "https://www.impots.gouv.fr",
+  "resume": "Service officiel DGFIP. Résumé rédigé par nous, pas copié.",
+  "tags": [
+    "service-public",
+    "impots"
+  ],
+  "date_validation": "2026-10-15",
+  "score": "A+",
+  "rapport_public": {
+    "https": true,
+    "hsts": true,
+    "trackers": 0,
+    "verdict": "Sobre, rapide, 0 tracker. Référence."
+  },
+  "mentions": {
+    "type": "favori éditorial",
+    "non_exhaustif": true
+  }
+}
