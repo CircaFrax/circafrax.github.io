@@ -30,6 +30,41 @@
     "date_validation": "2026-10-15"
   },
   {
+    "id": "gallica.bnf.fr",
+    "nom": "Gallica - BnF",
+    "url": "https://gallica.bnf.fr",
+    "resume": "Bibliothèque numérique de la Bibliothèque nationale de France. Plus de 10 millions de documents libres : livres, journaux, cartes, manuscrits, images. Accès libre et gratuit, sans publicité.",
+    "tags": [
+      "savoir",
+      "bibliotheque",
+      "culture",
+      "archive",
+      "service-public",
+      "open-data",
+      "bnf",
+      "patrimoine"
+    ],
+    "score": "A+",
+    "date_validation": "2026-10-16"
+  },
+  {
+    "id": "gutenberg.org",
+    "nom": "Project Gutenberg",
+    "url": "https://www.gutenberg.org",
+    "resume": "Bibliothèque de plus de 70 000 livres libres du domaine public. Textes intégraux en plusieurs formats, sans DRM ni publicité. Projet pionnier depuis 1971.",
+    "tags": [
+      "savoir",
+      "bibliotheque",
+      "livres",
+      "open-data",
+      "culture",
+      "archive",
+      "education"
+    ],
+    "score": "A+",
+    "date_validation": "2026-10-16"
+  },
+  {
     "id": "impots.gouv.fr",
     "nom": "Impôts.gouv.fr",
     "url": "https://www.impots.gouv.fr",
@@ -54,5 +89,22 @@
     ],
     "score": "A+",
     "date_validation": "2026-10-15"
+  },
+  {
+    "id": "wikisource.org",
+    "nom": "Wikisource",
+    "url": "https://fr.wikisource.org",
+    "resume": "Bibliothèque de textes du domaine public et sous licence libre. Romans, essais, discours, traités, sources juridiques et historiques vérifiés par la communauté.",
+    "tags": [
+      "savoir",
+      "bibliotheque",
+      "textes",
+      "open-data",
+      "culture",
+      "education",
+      "source"
+    ],
+    "score": "A+",
+    "date_validation": "2026-10-16"
   }
 ]
