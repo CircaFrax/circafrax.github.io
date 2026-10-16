@@ -1,0 +1,35 @@
+{
+  "id": "wikisource.org",
+  "nom": "Wikisource",
+  "url": "https://fr.wikisource.org",
+  "resume": "Bibliothèque de textes du domaine public et sous licence libre. Romans, essais, discours, traités, sources juridiques et historiques vérifiés par la communauté.",
+  "tags": [
+    "savoir",
+    "bibliotheque",
+    "textes",
+    "open-data",
+    "culture",
+    "education",
+    "source"
+  ],
+  "date_validation": "2026-10-16",
+  "score": "A+",
+  "rapport_public": {
+    "https": true,
+    "hsts": true,
+    "csp": true,
+    "trackers": 0,
+    "securite_globale": "Excellente",
+    "points_forts": [
+      "HSTS",
+      "Zéro pub",
+      "Zéro tracker",
+      "Contenu sous licence libre"
+    ],
+    "verdict": "Complément idéal de Wikipédia pour les sources primaires. Sobre, fiable, référence de confiance."
+  },
+  "mentions": {
+    "type": "favori éditorial",
+    "non_exhaustif": true
+  }
+}

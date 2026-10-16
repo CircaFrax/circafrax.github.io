@@ -1,0 +1,36 @@
+{
+  "id": "gallica.bnf.fr",
+  "nom": "Gallica - BnF",
+  "url": "https://gallica.bnf.fr",
+  "resume": "Bibliothèque numérique de la Bibliothèque nationale de France. Plus de 10 millions de documents libres : livres, journaux, cartes, manuscrits, images. Accès libre et gratuit, sans publicité.",
+  "tags": [
+    "savoir",
+    "bibliotheque",
+    "culture",
+    "archive",
+    "service-public",
+    "open-data",
+    "bnf",
+    "patrimoine"
+  ],
+  "date_validation": "2026-10-16",
+  "score": "A+",
+  "rapport_public": {
+    "https": true,
+    "hsts": true,
+    "csp": true,
+    "trackers": 0,
+    "securite_globale": "Excellente",
+    "points_forts": [
+      "HSTS activé",
+      "Site institutionnel service public",
+      "Pas de tracker publicitaire",
+      "Accès libre sans compte"
+    ],
+    "verdict": "Référence absolue du patrimoine numérisé. Modèle de mission de service public culturel, sobre et de confiance. A archiver en priorité."
+  },
+  "mentions": {
+    "type": "favori éditorial",
+    "non_exhaustif": true
+  }
+}
