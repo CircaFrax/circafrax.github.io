@@ -1,8 +1,4 @@
-/**
- * CircaFrax EPROM - search.js
- * Charge fiches/index.json (tableau) et affiche
- */
-
+/** CircaFrax EPROM - search.js v2 multi-mots */
 const RESULTS = document.getElementById('results');
 const STATS = document.getElementById('stats');
 const DEBUG = document.getElementById('debug');
@@ -10,14 +6,13 @@ const Q = document.getElementById('q');
 
 let FICHES = [];
 
-function log(msg){
-  if(DEBUG) DEBUG.textContent += msg + "\n";
-}
+function log(msg){ if(DEBUG) DEBUG.textContent += msg + "\n"; }
 
 function render(list){
   RESULTS.innerHTML = '';
   if(!list.length){
-    RESULTS.innerHTML = '<p>Aucune fiche.</p>';
+    RESULTS.innerHTML = '<p>Aucune fiche pour cette recherche.</p>';
+    STATS.textContent = `0 / ${FICHES.length} fiches`;
     return;
   }
   for(const f of list){
@@ -39,40 +34,34 @@ function render(list){
 }
 
 function filter(){
-  const q = (Q.value||'').toLowerCase().trim();
-  if(!q){ render(FICHES); return; }
+  const raw = (Q.value||'').toLowerCase().trim();
+  if(!raw){ render(FICHES); return; }
+  
+  // coupe sur espaces ET virgules, enlève les mots vides
+  const mots = raw.split(/[\s,]+/).filter(Boolean);
+  
   const out = FICHES.filter(f=>{
     const hay = `${f.id} ${f.nom} ${f.resume} ${f.url} ${(f.tags||[]).join(' ')}`.toLowerCase();
-    return hay.includes(q);
+    // ET logique : tous les mots doivent être présents
+    return mots.every(m => hay.includes(m));
   });
   render(out);
+  log(`recherche: "${raw}" → mots: [${mots.join(', ')}] → ${out.length} résultats`);
 }
 
 async function load(){
   log('Chargement fiches/index.json ...');
   try{
-    // cache-bust pour éviter le cache GitHub Pages
     const r = await fetch('./fiches/index.json?v=' + Date.now(), {cache:'no-store'});
-    log(`fetch status: ${r.status} ${r.statusText}`);
+    log(`fetch status: ${r.status}`);
     if(!r.ok) throw new Error('HTTP '+r.status);
     const data = await r.json();
-    log('JSON reçu, type: ' + (Array.isArray(data) ? 'array' : typeof data));
-    
-    // Supporte 2 formats: tableau direct OU {fiches:[...]} OU {count, fiches}
-    if(Array.isArray(data)){
-      FICHES = data;
-    } else if(Array.isArray(data.fiches)){
-      FICHES = data.fiches;
-    } else {
-      throw new Error('Format index.json inconnu');
-    }
-
-    log(`OK ${FICHES.length} fiches chargées: ${FICHES.map(f=>f.id).join(', ')}`);
+    FICHES = Array.isArray(data) ? data : (data.fiches || []);
+    log(`OK ${FICHES.length} fiches: ${FICHES.map(f=>f.id).join(', ')}`);
     render(FICHES);
   }catch(e){
     log('ERREUR: ' + e.message);
     STATS.textContent = 'Erreur chargement index.json — ' + e.message;
-    console.error(e);
   }
 }
 
