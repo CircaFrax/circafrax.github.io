@@ -1,0 +1,49 @@
+{
+  "id": "wikisource.org",
+  "nom": "Wikisource",
+  "url": "https://fr.wikisource.org",
+  "resume": "Bibliothèque de textes du domaine public et sous licence libre. Romans, essais, discours, traités, sources juridiques et historiques vérifiés par la communauté.",
+  "resume_public": "Bibliothèque de textes du domaine public et sous licence libre. Romans, essais, discours, traités, sources juridiques et historiques vérifiés par la communauté.",
+  "tags": [
+    "savoir",
+    "bibliotheque",
+    "textes",
+    "open-data",
+    "culture",
+    "education",
+    "source"
+  ],
+  "date_validation": "2026-10-16",
+  "score": "A+",
+  "rapport_public": {
+    "https": true,
+    "hsts": true,
+    "csp": true,
+    "trackers": 0,
+    "securite_globale": "Excellente",
+    "points_forts": [
+      "HSTS",
+      "Zéro pub",
+      "Zéro tracker",
+      "Contenu sous licence libre"
+    ],
+    "verdict": "Complément idéal de Wikipédia pour les sources primaires. Sobre, fiable, référence de confiance."
+  },
+  "rapport_prive": {
+    "headers_raw": {
+      "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+      "x-frame-options": "DENY"
+    },
+    "owasp_notes": "Même infra que Wikipédia, très propre.",
+    "vulnerabilites_privees": "Aucune",
+    "pistes_amelioration": "RAS",
+    "notes_internes": "Fiche savoir pur, 16/10/2026"
+  },
+  "mentions": {
+    "type": "favori éditorial",
+    "outil": "CodexSpatioport V2",
+    "auteur": "CircaFrax EPROM",
+    "licence_fiche": "CC-BY-SA 4.0 pour la partie publique uniquement",
+    "non_exhaustif": true
+  }
+}
