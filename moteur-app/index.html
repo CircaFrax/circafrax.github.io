@@ -26,7 +26,7 @@
       flex-direction:column;
     }
     .wrap{max-width:920px;margin:0 auto;padding:0 22px;width:100%}
-    /* TITRE FACON GOOGLE MAIS CLASSE */
+    /* TITRE CLICABLE COMME GOOGLE */
     .hero-title{
       text-align:center;
       padding:72px 0 28px;
@@ -38,35 +38,21 @@
       letter-spacing:-0.03em;
       margin:0;
       line-height:1;
+      cursor:pointer;
+      user-select:none;
+      transition:.2s;
     }
-    .hero-title h1 span{
-      color:var(--gold);
-      font-weight:400;
-    }
-    .hero-title p{
-      margin:12px 0 0;
-      color:var(--muted);
-      font-size:14px;
-      letter-spacing:.04em;
-    }
-    /* CHAMP DE RECHERCHE BEAU */
+    .hero-title h1:hover{opacity:.8;transform:scale(1.01)}
+    .hero-title h1 span{color:var(--gold);font-weight:400}
+    .hero-title p{margin:12px 0 0;color:var(--muted);font-size:14px;letter-spacing:.04em}
     .search-zone{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:14px;
-      margin:0 auto;
-      max-width:640px;
+      display:flex;flex-direction:column;align-items:center;gap:14px;
+      margin:0 auto;max-width:640px;
     }
     .search-box{
-      width:100%;
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:999px;
-      padding:6px 8px 6px 22px;
-      display:flex;
-      align-items:center;
-      gap:10px;
+      width:100%;background:#fff;border:1px solid var(--border);
+      border-radius:999px;padding:6px 8px 6px 22px;
+      display:flex;align-items:center;gap:10px;
       box-shadow:0 12px 32px -20px rgba(10,18,40,.25), 0 2px 8px -4px rgba(10,18,40,.08);
       transition:.25s;
     }
@@ -76,50 +62,35 @@
     }
     .search-icon{color:#9aa0ad;flex-shrink:0}
     #q{
-      flex:1;
-      border:none;
-      outline:none;
-      background:transparent;
-      font-size:16px;
-      padding:10px 0;
-      color:var(--text);
+      flex:1;border:none;outline:none;background:transparent;
+      font-size:16px;padding:10px 0;color:var(--text);
     }
     #q::placeholder{color:#9aa0ad}
-    .search-hint{
-      font-size:12px;
-      color:var(--muted);
-      text-align:center;
-    }
-    /* INDICATEUR COMPREHENSIBLE */
+    .search-hint{font-size:12px;color:var(--muted);text-align:center}
     #stats{
-      font-size:12.5px;
-      color:var(--muted);
-      text-align:center;
-      margin-top:2px;
-      min-height:18px;
+      font-size:12.5px;color:var(--muted);text-align:center;
+      margin-top:2px;min-height:18px;
     }
     #stats b{color:var(--navy);font-weight:600}
-    /* RESULTATS */
     .main{flex:1;padding:24px 0 0}
     .grid{
       display:grid;
       grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
-      gap:14px;
-      margin-top:22px;
+      gap:14px;margin-top:22px;
     }
     .card{
       background:#fff;border:1px solid var(--border);border-radius:14px;
       padding:16px;box-shadow:0 6px 18px -14px rgba(10,18,40,.3);
+      transition:.2s;
     }
-    .card strong{font-size:14.5px}
+    .card:hover{transform:translateY(-1px);box-shadow:0 10px 24px -12px rgba(10,18,40,.25)}
+    .card strong a{color:var(--navy);text-decoration:none}
+    .card strong a:hover{color:var(--gold);text-decoration:underline}
     .card p{font-size:13px;line-height:1.5;color:var(--muted);margin:6px 0 0}
     .tag{font-size:10.5px;background:#f3f4f6;padding:2px 7px;border-radius:999px;margin-right:4px;color:#475569;display:inline-block;margin-top:4px}
     .score{font-size:11px;font-weight:700;background:rgba(212,175,55,.15);padding:2px 7px;border-radius:999px;color:var(--navy)}
-    /* CONSOLE EN BAS CACHEE - VISIBLE QUE SI ON DESCEND */
     .console-wrap{
-      margin-top:80px;
-      padding-top:28px;
-      border-top:1px dashed var(--border);
+      margin-top:80px;padding-top:28px;border-top:1px dashed var(--border);
     }
     .console-wrap h4{
       font-size:10px;letter-spacing:.12em;text-transform:uppercase;
@@ -134,13 +105,10 @@
       max-height:132px;overflow-y:auto;overflow-x:hidden;
       border:1px solid rgba(255,255,255,.06);
     }
-    /* FOOTER DISCRET PROPRE */
     .mini-footer{
-      padding:22px 0;
-      margin-top:40px;
+      padding:22px 0;margin-top:40px;
       border-top:1px solid var(--border);
-      font-size:11.5px;color:var(--muted);
-      text-align:center;
+      font-size:11.5px;color:var(--muted);text-align:center;
     }
     .mini-footer a{color:var(--navy);font-weight:600}
     .mini-footer a:hover{text-decoration:underline}
@@ -152,25 +120,23 @@
   </style>
 </head>
 <body>
-  <!-- TITRE CLASSE FACON GOOGLE -->
+  <!-- TITRE CLICABLE = RESET -->
   <div class="hero-title wrap">
-    <h1>CircaFrax <span>EPROM</span></h1>
+    <h1 id="brand" title="Cliquez pour effacer la recherche">CircaFrax <span>EPROM</span></h1>
     <p>Moteur de sources vérifiées — sans publicité</p>
   </div>
-  <!-- CHAMP BEAU CENTRE -->
   <div class="wrap search-zone">
     <div class="search-box">
       <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
       <input type="search" id="q" placeholder="Rechercher : savoir, bibliotheque, service-public..." autofocus>
     </div>
-    <div id="stats">Chargement des fiches...</div>
-    <div class="search-hint">Astuce : tape plusieurs mots — ex. "savoir bibliotheque" ou "service-public, impots"</div>
+    <div id="stats">Tapez pour commencer • 7 fiches vérifiées disponibles</div>
+    <div class="search-hint">Ex. "savoir bibliotheque" ou "service-public, impots"</div>
   </div>
   <div class="main wrap">
     <div id="results" class="grid"></div>
-    <!-- CONSOLE EN BAS - VISIBLE QUE SI ON DESCEND -->
     <div class="console-wrap">
-      <h4>Console EPROM — technique, en bas de page</h4>
+      <h4>Console EPROM — en bas de page</h4>
       <pre id="debug">Chargement fiches/index.json ...
 </pre>
     </div>
@@ -181,15 +147,20 @@
     </div>
   </div>
 <script>
-/** search.js v3 — texte humain pour tous */
 const RESULTS = document.getElementById('results');
 const STATS = document.getElementById('stats');
 const DEBUG = document.getElementById('debug');
 const Q = document.getElementById('q');
+const BRAND = document.getElementById('brand');
 let FICHES = [];
 function log(msg){ if(DEBUG) DEBUG.textContent += msg + "\n"; }
-function render(list){
+function render(list, isInitial=false){
   RESULTS.innerHTML = '';
+  if(isInitial){
+    // Au démarrage : aucun site affiché
+    STATS.innerHTML = `Tapez pour commencer • <b>${FICHES.length} fiches vérifiées disponibles</b>`;
+    return;
+  }
   if(!list.length){
     RESULTS.innerHTML = '<p style="text-align:center;color:#6b7280;margin-top:24px">Aucune fiche pour cette recherche.</p>';
     STATS.innerHTML = `0 résultat • <b>${FICHES.length} fiches vérifiées disponibles</b>`;
@@ -198,19 +169,19 @@ function render(list){
   for(const f of list){
     const div = document.createElement('div');
     div.className = 'card';
+    // TITRE CLIQUABLE qui ouvre le site + liens en plus
     div.innerHTML = `
-      <div style="display:flex;justify-content:space-between">
-        <strong>${f.nom || f.id}</strong>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <strong><a href="${f.url}" target="_blank" rel="noopener" title="Ouvrir le site">${f.nom || f.id}</a></strong>
         <span class="score">${f.score||''}</span>
       </div>
       <div style="font-size:11.5px;color:#6b7280;margin:4px 0">${f.url||''}</div>
       <p>${f.resume||''}</p>
       <div style="margin-top:8px">${(f.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
-      <div style="margin-top:8px"><a href="fiches/${f.id}.json" target="_blank" style="font-size:11px;color:#334155;text-decoration:underline">voir fiche</a> • <a href="${f.url}" target="_blank" style="font-size:11px;color:#334155;text-decoration:underline">ouvrir site</a></div>
+      <div style="margin-top:8px"><a href="fiches/${f.id}.json" target="_blank" style="font-size:11px;color:#334155;text-decoration:underline">voir fiche</a> • <a href="${f.url}" target="_blank" rel="noopener" style="font-size:11px;color:#334155;text-decoration:underline">ouvrir site</a></div>
     `;
     RESULTS.appendChild(div);
   }
-  // TEXTE HUMAIN : compréhensible par tous, pas "sobre • local"
   if(list.length === FICHES.length){
     STATS.innerHTML = `<b>${FICHES.length} fiches vérifiées disponibles</b> — tapez pour filtrer`;
   } else {
@@ -219,7 +190,11 @@ function render(list){
 }
 function filter(){
   const raw = (Q.value||'').toLowerCase().trim();
-  if(!raw){ render(FICHES); return; }
+  if(!raw){
+    // Si on efface, on revient à vide (pas d'affichage par défaut)
+    render([], true);
+    return;
+  }
   const mots = raw.split(/[\s,]+/).filter(Boolean);
   const out = FICHES.filter(f=>{
     const hay = `${f.id} ${f.nom} ${f.resume} ${f.url} ${(f.tags||[]).join(' ')}`.toLowerCase();
@@ -227,6 +202,13 @@ function filter(){
   });
   render(out);
   log(`recherche: "${raw}" → [${mots.join(', ')}] → ${out.length} résultats`);
+}
+function resetSearch(){
+  Q.value = '';
+  render([], true);
+  Q.focus();
+  window.scrollTo({top:0, behavior:'smooth'});
+  log('reset par clic sur le titre');
 }
 async function load(){
   log('Chargement fiches/index.json ...');
@@ -237,13 +219,15 @@ async function load(){
     const data = await r.json();
     FICHES = Array.isArray(data) ? data : (data.fiches || []);
     log(`OK ${FICHES.length} fiches: ${FICHES.map(f=>f.id).join(', ')}`);
-    render(FICHES);
+    // Au démarrage : AUCUN site affiché
+    render([], true);
   }catch(e){
     log('ERREUR: ' + e.message);
     STATS.textContent = 'Erreur chargement — ' + e.message;
   }
 }
 Q.addEventListener('input', filter);
+BRAND.addEventListener('click', resetSearch);
 load();
 </script>
 </body>
