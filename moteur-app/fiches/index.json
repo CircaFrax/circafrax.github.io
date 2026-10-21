@@ -1,5 +1,19 @@
 [
   {
+    "id": "ameli.fr",
+    "nom": "ameli.fr",
+    "url": "https://ameli.fr",
+    "resume": "Site officiel de l'assurance maladie.",
+    "tags": [
+      "demarche",
+      "assurance",
+      "maladie",
+      "remboursement",
+      "ameli"
+    "score": "A",
+    "date_validation": "2026-10-15"
+  },
+  {
     "id": "archive.org",
     "nom": "Internet Archive",
     "url": "https://archive.org",
