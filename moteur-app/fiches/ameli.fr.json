@@ -1,0 +1,24 @@
+{
+  "id": "ameli.fr",
+  "nom": "ameli.fr",
+  "url": "https://ameli.fr",
+  "resume": "Site officiel de l'assurance maladie.",
+    "tags": [
+      "demarche",
+      "assurance",
+      "maladie",
+      "remboursement",
+      "ameli"
+  "date_validation": "2026-10-15",
+  "score": "A",
+  "rapport_public": {
+    "https": true,
+    "hsts": true,
+    "trackers": 0,
+    "verdict": "Fiche en cours de validation."
+  },
+  "mentions": {
+    "type": "favori éditorial",
+    "non_exhaustif": true
+  }
+}
