@@ -1,0 +1,19 @@
+{
+  "id": "service-public.gouv.fr",
+  "nom": "service-public.gouv.fr",
+  "url": "https://service-public.gouv.fr",
+  "resume": "Site du service public francais.",
+  "tags": [service, public, gouv],
+  "date_validation": "2026-10-15",
+  "score": "A",
+  "rapport_public": {
+    "https": true,
+    "hsts": true,
+    "trackers": 0,
+    "verdict": "Site de référence du service public. sûr, vérifié."
+  },
+  "mentions": {
+    "type": "favori éditorial",
+    "non_exhaustif": true
+  }
+}
