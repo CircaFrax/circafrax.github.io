@@ -75,6 +75,21 @@
     "date_validation": "2026-10-15"
   },
   {
+    "id": "data.culture.gouv.fr",
+    "nom": "data.culture.gouv.fr",
+    "url": "https://data.culture.gouv.fr",
+    "resume": "plateforme thématique de data.gouv.fr dédiée à la culture.",
+    "tags": [
+      "musées",
+      "patrimoine",
+      "opendata",
+      "culture",
+      "gouv"
+    ],
+    "score": "A",
+    "date_validation": "2026-10-15"
+  },
+  {
     "id": "gallica.bnf.fr",
     "nom": "Gallica - BnF",
     "url": "https://gallica.bnf.fr",
