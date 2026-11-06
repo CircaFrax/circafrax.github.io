@@ -3,7 +3,7 @@
   "nom": "service-public.gouv.fr",
   "url": "https://service-public.gouv.fr",
   "resume": "Site du service public francais.",
-  "tags": [service, public, gouv],
+  "tags": [service, public, gouv, information],
   "date_validation": "2026-10-15",
   "score": "A",
   "rapport_public": {
