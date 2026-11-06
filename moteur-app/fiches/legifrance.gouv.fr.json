@@ -1,0 +1,19 @@
+{
+  "id": "legifrance.gouv.fr",
+  "nom": "legifrance.gouv.fr",
+  "url": "https://legifrance.gouv.fr",
+  "resume": "Site officiel du gouvernement français dédié à la diffusion gratuite du droit, servant de portail centralisé pour accéder aux textes législatifs et réglementaires, ainsi qu'à la jurisprudence des hautes juridictions.",
+  "tags": [legislation, droit, loi, code, decret, arretes, jurisprudence, conventions, collectives, legifrance, gouv],
+  "date_validation": "2026-10-15",
+  "score": "A",
+  "rapport_public": {
+    "https": true,
+    "hsts": true,
+    "trackers": 0,
+    "verdict": "Site officiel du gouvernement."
+  },
+  "mentions": {
+    "type": "favori éditorial",
+    "non_exhaustif": true
+  }
+}
