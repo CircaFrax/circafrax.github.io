@@ -1,0 +1,19 @@
+{
+  "id": "insee.fr",
+  "nom": "insee.fr",
+  "url": "https://insee.fr",
+  "resume": "Organisme public français chargé de collecter, produire, analyser et diffuser les statistiques officielles sur l'économie et la société.",
+  "tags": [insee, statistiques, donnees, economie, demographie, emploi, gouv],
+  "date_validation": "2026-10-15",
+  "score": "A",
+  "rapport_public": {
+    "https": true,
+    "hsts": true,
+    "trackers": 0,
+    "verdict": "Site sûr de statistiques."
+  },
+  "mentions": {
+    "type": "favori éditorial",
+    "non_exhaustif": true
+  }
+}
