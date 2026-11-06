@@ -58,6 +58,23 @@
     "date_validation": "2026-10-15"
   },
   {
+    "id": "data.gouv.fr",
+    "nom": "data.gouv.fr",
+    "url": "https://data.gouv.fr",
+    "resume": "Plateforme ouverte de données publiques françaises : consulter, télécharger et réutiliser librement les données de l'administration.",
+    "tags": [
+      "opendata",
+      "donees",
+      "publiques",
+      "transparence",
+      "administration",
+      "gouv",
+      "data"
+    ],
+    "score": "A",
+    "date_validation": "2026-10-15"
+  },
+  {
     "id": "gallica.bnf.fr",
     "nom": "Gallica - BnF",
     "url": "https://gallica.bnf.fr",
