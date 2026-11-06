@@ -137,6 +137,23 @@
     "date_validation": "2026-10-15"
   },
   {
+    "id": "insee.fr",
+    "nom": "insee.fr",
+    "url": "https://insee.fr",
+    "resume": "Pas de résumé.",
+    "tags": [
+      "insee",
+      "statistiques",
+      "donnees",
+      "economie",
+      "demographie",
+      "emploi",
+      "gouv"
+    ],
+    "score": "A",
+    "date_validation": "2026-10-15"
+  },
+  {
     "id": "legifrance.gouv.fr",
     "nom": "legifrance.gouv.fr",
     "url": "https://legifrance.gouv.fr",
