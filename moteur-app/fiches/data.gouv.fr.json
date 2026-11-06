@@ -1,0 +1,19 @@
+{
+  "id": "data.gouv.fr",
+  "nom": "data.gouv.fr",
+  "url": "https://data.gouv.fr",
+  "resume": "Plateforme ouverte de données publiques françaises : consulter, télécharger et réutiliser librement les données de l'administration.",
+  "tags": [opendata, donees, publiques, transparence, administration, gouv, data],
+  "date_validation": "2026-10-15",
+  "score": "A",
+  "rapport_public": {
+    "https": true,
+    "hsts": true,
+    "trackers": 0,
+    "verdict": "Data des données publiques francaises."
+  },
+  "mentions": {
+    "type": "favori éditorial",
+    "non_exhaustif": true
+  }
+}
