@@ -44,6 +44,19 @@
     "score": "A",
     "date_validation": "2026-10-15"
   },
+    {
+    "id": "caf.fr",
+    "nom": "caf.fr",
+    "url": "https://caf.fr",
+    "resume": "Site de la caisse d'allocation familliale.",
+    "tags": [
+      "caf",
+      "allocations",
+      "gouv"
+    ],
+    "score": "A",
+    "date_validation": "2026-10-15"
+  },
   {
     "id": "gallica.bnf.fr",
     "nom": "Gallica - BnF",
