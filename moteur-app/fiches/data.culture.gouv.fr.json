@@ -1,0 +1,19 @@
+{
+  "id": "data.culture.gouv.fr",
+  "nom": "data.culture.gouv.fr",
+  "url": "https://data.culture.gouv.fr",
+  "resume": "plateforme thématique de data.gouv.fr dédiée à la culture.",
+  "tags": [musées, patrimoine, opendata, culture, gouv],
+  "date_validation": "2026-10-15",
+  "score": "A",
+  "rapport_public": {
+    "https": true,
+    "hsts": true,
+    "trackers": 0,
+    "verdict": "Site sûr des donnees culturelles."
+  },
+  "mentions": {
+    "type": "favori éditorial",
+    "non_exhaustif": true
+  }
+}
