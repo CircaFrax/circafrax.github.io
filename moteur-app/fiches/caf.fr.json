@@ -1,0 +1,19 @@
+{
+  "id": "caf.fr",
+  "nom": "caf.fr",
+  "url": "https://caf.fr",
+  "resume": "Site de la caisse d'allocation familliale.",
+  "tags": [caf, allocation, allocations, gouv],
+  "date_validation": "2026-10-15",
+  "score": "A",
+  "rapport_public": {
+    "https": true,
+    "hsts": true,
+    "trackers": 0,
+    "verdict": "Site de références pour la caisse d'allocation familliale."
+  },
+  "mentions": {
+    "type": "favori éditorial",
+    "non_exhaustif": true
+  }
+}
