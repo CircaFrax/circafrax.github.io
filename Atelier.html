@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CircaFrax – L'Atelier, petites créations libres</title>
+  <meta name="description" content="L'Atelier CircaFrax : calendrier 2027, papercraft, carte de visite, jeux, flyers. Petites créations libres, gratuites, à télécharger et imprimer.">
+  <meta property="og:title" content="CircaFrax – L'Atelier, petites créations libres">
+  <meta property="og:description" content="Calendrier 2027, papercraft, carte de visite, jeux, flyers. À télécharger, à imprimer, gratuitement.">
+  <meta property="og:image" content="https://circafrax.github.io/assets/og-image.png">
+  <meta property="og:url" content="https://circafrax.github.io/atelier.html">
+  <meta property="og:type" content="website">
+  <style>
+    :root{
+      --navy:#0a1228;
+      --gold:#d4af37;
+      --bg:#fcfbf8;
+      --bg-soft:#fffdf3;
+      --bg-paper:#fbfaf7;
+      --border:rgba(10,18,40,.08);
+      --text:#0a1228;
+      --muted:#6b7280;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+    a{color:inherit;text-decoration:none}
+    .serif{font-family:Georgia,'Times New Roman',serif;letter-spacing:-.02em}
+    .site-header{
+      position:sticky;top:0;z-index:30;
+      background:rgba(255,255,255,.88);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--border);
+    }
+    .header-inner{
+      max-width:1100px;margin:0 auto;
+      padding:0 24px;height:68px;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.02em}
+    .logo img{
+      width:32px;height:32px;object-fit:contain;
+      border-radius:8px;background:#fffdf3;border:1px solid var(--border)
+    }
+    .site-nav{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+    .site-nav a{
+      font-size:13.5px;font-weight:500;color:#334155;
+      padding:7px 0;border-bottom:2px solid transparent;transition:.2s
+    }
+    .site-nav a:hover{color:var(--navy)}
+    .site-nav a.active{color:var(--navy);border-bottom-color:var(--gold)}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+    .hero{padding:48px 0 24px;background:radial-gradient(120% 120% at 20% 0%,#fffdf3 0%,#fcfbf8 55%,#fbfaf7 100%)}
+    .hero-top{
+      display:flex;justify-content:space-between;align-items:center;
+      flex-wrap:wrap;gap:12px;margin-bottom:20px
+    }
+    .badge{
+      display:inline-flex;align-items:center;
+      background:#0a1228;color:#fff;
+      font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+      padding:6px 12px;border-radius:999px
+    }
+    .btn-share{
+      display:inline-flex;align-items:center;gap:8px;
+      background:#d4af37;color:#0a1228;border:1px solid #d4af37;
+      border-radius:999px;padding:10px 22px;
+      font-size:14px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+      cursor:pointer;transition:.2s
+    }
+    .btn-share:hover{
+      background:transparent;color:#d4af37;
+      transform:translateY(-1px);
+    }
+    .hero h1{
+      font-size:52px;
+      line-height:.95;
+      margin:0 0 18px;
+      font-weight:300;
+    }
+    .hero h1 span{color:var(--gold)}
+    .hero .lead{color:var(--muted);font-size:17px;max-width:680px;margin:0 0 28px}
+    .section{padding:36px 0 64px}
+    /* NOUVEAUTE : bulle en haut, à éditer à chaque nouvel outil */
+    .nouveaute{
+      display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+      background:#fff8e1;border:1px solid #f5e6a8;border-radius:999px;
+      padding:10px 16px;margin-bottom:24px;
+      font-size:14px;
+    }
+    .nouveaute-badge{
+      background:var(--navy);color:#fff;
+      font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+      padding:5px 10px;border-radius:999px;white-space:nowrap;
+    }
+    .nouveaute b{color:var(--navy)}
+    .nouveaute span{color:var(--muted)}
+    .nouveaute a{
+      color:var(--navy);font-weight:700;text-decoration:underline;
+      text-underline-offset:3px;
+    }
+    /* SOMMAIRE ancres */
+    .sommaire{
+      position:sticky;top:68px;z-index:20;
+      background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+      border:1px solid var(--border);border-radius:999px;
+      padding:8px;display:flex;gap:6px;flex-wrap:wrap;
+      margin-bottom:32px;
+    }
+    .sommaire a{
+      font-size:13px;font-weight:600;color:#334155;
+      padding:7px 14px;border-radius:999px;
+    }
+    .sommaire a:hover{background:#fbfaf7;color:var(--navy)}
+    .sommaire a.active{background:var(--navy);color:#fff}
+    /* BLOC OUTIL : à copier pour chaque nouvel outil */
+    .outil{padding:28px 0;border-top:1px solid var(--border)}
+    .outil:first-of-type{border-top:none;padding-top:0}
+    .outil-head{margin-bottom:18px}
+    .outil-head h2{font-size:28px;margin:0;font-weight:300}
+    .outil-head h2 span{color:var(--gold)}
+    .outil-head p{margin:6px 0 0;color:var(--muted);font-size:14.5px;max-width:680px}
+    .cartes{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+    .carte{
+      background:#fff;border:1px solid var(--border);border-radius:20px;
+      padding:18px;box-shadow:0 12px 32px -20px rgba(10,18,40,.25);
+      display:flex;flex-direction:column;gap:12px;
+    }
+    .carte.soft{background:#fffdf3}
+    .carte.paper{background:#fbfaf7}
+    .carte img{
+      width:100%;height:auto;object-fit:contain;
+      border-radius:12px;background:#fff;border:1px solid var(--border);
+    }
+    .carte h3{font-size:19px;margin:0}
+    .carte p{margin:0;color:var(--muted);font-size:14px}
+    .carte .boutons{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+    .pills{display:flex;flex-wrap:wrap;gap:8px}
+    .pill{
+      font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+      padding:5px 10px;border-radius:999px;
+      border:1px solid var(--border);background:#fff;color:#334155
+    }
+    .pill.gold{background:#fff8e1;border-color:#f5e6a8;color:#7a5a0a}
+    .pill.navy{background:#0a1228;color:#fff;border-color:#0a1228}
+    .pill.grey{background:#f3f4f6;color:#6b7280}
+    .btn-primary{
+      display:inline-flex;align-items:center;
+      background:#d4af37;color:#0a1228;
+      border-radius:999px;padding:10px 20px;
+      font-size:13.5px;font-weight:700;
+      border:1px solid #d4af37;
+    }
+    .btn-secondary{
+      display:inline-flex;align-items:center;
+      background:#fff;color:#0a1228;
+      border-radius:999px;padding:10px 20px;
+      font-size:13.5px;font-weight:600;
+      border:1px solid var(--border);
+    }
+    .placeholder{
+      border:1px dashed #d1d5db;border-radius:12px;
+      padding:28px 18px;text-align:center;
+      color:var(--muted);font-size:14px;background:#fbfaf7;
+    }
+    .placeholder b{color:var(--navy);display:block;font-size:16px;margin-bottom:4px}
+    .retour{
+      display:inline-flex;margin-top:28px;
+      font-size:13px;color:var(--muted);
+    }
+    .retour:hover{color:var(--navy)}
+    .footer-hr{
+      border:none;height:3px;
+      background:linear-gradient(to right,#0a1228,#d4af37);
+      border-radius:2px;margin:0 0 28px
+    }
+    .site-footer{
+      background:#fbfaf7;border-top:1px solid var(--border);
+      padding:32px 0 44px;margin-top:56px
+    }
+    .footer-grid{
+      display:grid;grid-template-columns:1.4fr .8fr .9fr .9fr;
+      gap:32px;font-size:13.5px;color:var(--muted)
+    }
+    .footer-grid h4{
+      margin:0 0 12px;font-size:12px;letter-spacing:.1em;
+      text-transform:uppercase;color:var(--navy)
+    }
+    .footer-grid a{display:block;padding:4px 0}
+    .footer-grid a:hover{color:var(--navy)}
+    .footer-brand img{
+      width:32px;height:32px;border-radius:8px;background:#fff;
+      border:1px solid var(--border);vertical-align:middle;margin-right:8px
+    }
+    @media(max-width:980px){
+      .cartes{grid-template-columns:1fr}
+      .header-inner{flex-direction:column;align-items:flex-start;height:auto;padding:14px 24px;gap:10px}
+      .hero h1{font-size:36px}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .sommaire{position:static;border-radius:16px}
+      .nouveaute{border-radius:16px}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <img src="images/CircaFrax_Logo.png" alt="CircaFrax logo">
+        CircaFrax
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">Accueil</a>
+        <a href="moteur.html">Moteur</a>
+        <a href="codex.html">Codex</a>
+        <a href="eca.html">ECA</a>
+        <a href="equipe.html">Équipe</a>
+        <a href="partenaires.html">Partenaires</a>
+        <a class="active" href="atelier.html">Atelier</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-top">
+          <span class="badge">Petites créations libres</span>
+          <button class="btn-share" onclick="shareCircaFrax()" aria-label="Partager cette page">
+            Partager cette page
+          </button>
+        </div>
+        <h1 class="serif">L' <span>Atelier</span></h1>
+        <p class="lead">
+          Des petites créations utiles ou amusantes, libres et gratuites.
+          À télécharger, à imprimer, à utiliser tout de suite.
+          Sans compte, sans pub.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+
+        <!-- NOUVEAUTE : à éditer à chaque nouvel outil -->
+        <!-- Tu changes juste le titre, la petite description, et le lien # -->
+        <div class="nouveaute">
+          <span class="nouveaute-badge">Nouveauté</span>
+          <b>Calendrier 2027</b>
+          <span>Toute l'année en une page, version sobre et version CircaFrax.</span>
+          <a href="#calendrier">Voir ↓</a>
+        </div>
+
+        <!-- SOMMAIRE : ancres -->
+        <nav class="sommaire">
+          <a class="active" href="#calendrier">Calendrier</a>
+          <a href="#papercraft">Papercraft</a>
+          <a href="#carte">Carte de visite</a>
+          <a href="#jeux">Jeux</a>
+          <a href="#flyers">Flyers</a>
+        </nav>
+
+        <!-- OUTIL 1 : CALENDRIER -->
+        <div class="outil" id="calendrier">
+          <div class="outil-head">
+            <h2 class="serif">Calendrier <span>2027</span></h2>
+            <p>Toute l'année en une page. Jours fériés France, semaine du lundi au dimanche. À afficher, à imprimer en A4 ou A3.</p>
+          </div>
+          <div class="cartes">
+            <div class="carte soft">
+              <div class="pills">
+                <span class="pill navy">À imprimer</span>
+                <span class="pill gold">Grand public</span>
+              </div>
+              <img src="images/calendrier-2027-sobre.png" alt="Calendrier 2027 version sobre, une page">
+              <h3 class="serif">Version sobre</h3>
+              <p>Blanche, lisible partout. Pour le bureau, l'école, la maison. C'est la version à partager sans réfléchir.</p>
+              <div class="boutons">
+                <a class="btn-primary" href="calendrier/calendrier-2027-1-page.pdf" download>Enregistrer le PDF</a>
+                <a class="btn-secondary" href="calendrier/calendrier-2027-1-page.pdf" target="_blank" rel="noopener">Aperçu</a>
+              </div>
+            </div>
+            <div class="carte paper">
+              <div class="pills">
+                <span class="pill navy">À imprimer</span>
+                <span class="pill">Version CircaFrax</span>
+              </div>
+              <img src="images/calendrier-2027-circafrax.png" alt="Calendrier 2027 version CircaFrax, une page">
+              <h3 class="serif">Version CircaFrax</h3>
+              <p>Même grille, mais avec l'univers CircaFrax. Header navy, touche gold. Pour ceux qui connaissent déjà la maison.</p>
+              <div class="boutons">
+                <a class="btn-primary" href="calendrier/calendrier-2027-circafrax.pdf" download>Enregistrer le PDF</a>
+                <a class="btn-secondary" href="calendrier/calendrier-2027-circafrax.pdf" target="_blank" rel="noopener">Aperçu</a>
+              </div>
+            </div>
+          </div>
+          <a class="retour" href="#top">↑ Retour au sommaire</a>
+        </div>
+
+        <!-- OUTIL 2 : PAPERCRAFT -->
+        <div class="outil" id="papercraft">
+          <div class="outil-head">
+            <h2 class="serif">Papercraft</h2>
+            <p>À découper, à plier, à construire. Des petits modèles à imprimer chez soi.</p>
+          </div>
+          <div class="cartes">
+            <div class="carte">
+              <div class="pills">
+                <span class="pill grey">Bientôt</span>
+                <span class="pill">À imprimer</span>
+              </div>
+              <div class="placeholder">
+                <b>Premier papercraft en préparation</b>
+                Tu pourras copier ce bloc pour chaque nouveau modèle.
+              </div>
+              <h3 class="serif">Modèle 01 – Bientôt</h3>
+              <p>Un premier modèle simple, pour tester le format. Le lien de téléchargement arrivera ici.</p>
+              <div class="boutons">
+                <a class="btn-secondary" href="en_construction.html">Voir la page en construction</a>
+              </div>
+            </div>
+            <div class="carte paper">
+              <div class="pills">
+                <span class="pill gold">Idée</span>
+              </div>
+              <h3 class="serif">Comment ça marchera ?</h3>
+              <p>Tu télécharges le PDF, tu imprimes, tu découpes, tu colles. Pas d'outil compliqué, juste du papier et un peu de patience.</p>
+              <p>Si tu as une idée de modèle, dis-le, on le met en tête de liste.</p>
+            </div>
+          </div>
+          <a class="retour" href="#top">↑ Retour au sommaire</a>
+        </div>
+
+        <!-- OUTIL 3 : CARTE DE VISITE -->
+        <div class="outil" id="carte">
+          <div class="outil-head">
+            <h2 class="serif">Créez votre carte <span>de visite</span></h2>
+            <p>Un petit outil HTML, sans compte. Tu tapes ton nom, ton activité, tu imprimes.</p>
+          </div>
+          <div class="cartes">
+            <div class="carte soft">
+              <div class="pills">
+                <span class="pill navy">Outil</span>
+                <span class="pill gold">En construction</span>
+              </div>
+              <div class="placeholder">
+                <b>Outil en construction</b>
+                Le mini-jeu et cet outil partageront la même page en_construction pour l'instant.
+              </div>
+              <h3 class="serif">Carte de visite – V1</h3>
+              <p>Nom, activité, contact, petit logo. Une carte sobre, prête à découper. Le tout dans le navigateur, rien n'est envoyé.</p>
+              <div class="boutons">
+                <a class="btn-primary" href="en_construction.html">Ouvrir l'outil (bientôt)</a>
+              </div>
+            </div>
+            <div class="carte">
+              <h3 class="serif">Pourquoi en HTML ?</h3>
+              <p>Parce que ça reste hors ligne, gratuit, et que tu peux modifier le modèle à la ligne comme le reste du site.</p>
+              <p>Quand l'outil sera prêt, tu remplaceras juste le lien en_construction.html par le vrai outil.</p>
+            </div>
+          </div>
+          <a class="retour" href="#top">↑ Retour au sommaire</a>
+        </div>
+
+        <!-- OUTIL 4 : JEUX -->
+        <div class="outil" id="jeux">
+          <div class="outil-head">
+            <h2 class="serif">Jeux <span>HTML</span></h2>
+            <p>Des petits jeux directs, sans installation. On clique, on joue.</p>
+          </div>
+          <div class="cartes">
+            <div class="carte paper">
+              <div class="pills">
+                <span class="pill navy">Jeu</span>
+                <span class="pill gold">En construction</span>
+              </div>
+              <div class="placeholder">
+                <b>Petit jeu en construction</b>
+                Il reste accessible via cette page, le temps de le finir.
+              </div>
+              <h3 class="serif">Petit jeu – En construction</h3>
+              <p>Le premier petit jeu de l'Atelier est en train d'être forgé. Il sera ici, en accès direct, sans compte.</p>
+              <div class="boutons">
+                <a class="btn-primary" href="en_construction.html">Voir le jeu (bientôt)</a>
+              </div>
+            </div>
+            <div class="carte">
+              <h3 class="serif">Et après ?</h3>
+              <p>Chaque nouveau jeu = un nouveau bloc à copier. Tu changes le titre, l'image, le lien, et c'est en ligne.</p>
+              <p>La page reste longue verticalement, c'est voulu. On scrolle, on découvre.</p>
+            </div>
+          </div>
+          <a class="retour" href="#top">↑ Retour au sommaire</a>
+        </div>
+
+        <!-- OUTIL 5 : FLYERS -->
+        <div class="outil" id="flyers">
+          <div class="outil-head">
+            <h2 class="serif">Flyers <span>à imprimer</span></h2>
+            <p>Tu télécharges, tu imprimes toi-même, tu affiches. Pour ton entreprise, ton école, ton fablab.</p>
+          </div>
+          <div class="cartes">
+            <div class="carte soft">
+              <div class="pills">
+                <span class="pill navy">À imprimer</span>
+                <span class="pill grey">Bientôt</span>
+              </div>
+              <div class="placeholder">
+                <b>Flyer CircaFrax – Bientôt</b>
+                Un recto A4, clair, avec QR vers le site.
+              </div>
+              <h3 class="serif">Flyer CircaFrax – V1</h3>
+              <p>Un seul flyer au début, pas cinq. Recto, sobre, avec QR. Tu l'imprimes, tu l'affiches où tu veux.</p>
+              <div class="boutons">
+                <a class="btn-secondary" href="en_construction.html">Voir la page en construction</a>
+              </div>
+            </div>
+            <div class="carte">
+              <h3 class="serif">Pourquoi un flyer ?</h3>
+              <p>Parce que le hors ligne, c'est aussi du papier. Quelqu'un qui voit le flyer dans un atelier peut scanner le QR et arriver ici, dans l'Atelier.</p>
+              <p>C'est de la distribution gratuite, sans pub.</p>
+            </div>
+          </div>
+          <a class="retour" href="#top">↑ Retour au sommaire</a>
+        </div>
+
+        <p style="color:var(--muted);font-size:13.5px;margin-top:24px">
+          Cette page va grandir verticalement avec le temps. Petite au début, très longue après. C'est voulu : tout est visible, tout est à portée de scroll.
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <hr class="footer-hr">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4><img src="images/CircaFrax_Logo.png" alt="CircaFrax logo">CircaFrax</h4>
+          <p>Outils libres, gratuits, hors ligne, made in France.</p>
+          <p style="margin-top:12px">© 2026 CircaFrax<br><a href="mentions-legales.html">Mentions légales</a></p>
+        </div>
+        <div>
+          <h4>Pages</h4>
+          <a href="index.html">Accueil</a>
+          <a href="moteur.html">Moteur</a>
+          <a href="codex.html">Codex</a>
+          <a href="eca.html">ECA</a>
+          <a href="equipe.html">Equipe</a>
+          <a href="partenaires.html">Partenaires</a>
+        </div>
+        <div>
+          <h4>Liens rapides</h4>
+          <a href="https://github.com/CircaFrax" target="_blank" rel="noopener">GitHub</a>
+          <a href="atelier.html">Atelier</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Soutien</h4>
+          <a href="en_construction.html">Section design</a>
+          <a href="en_construction.html">Donation OpenCollective</a>
+          <a href="en_construction.html">Buy me a coffee</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function shareCircaFrax(){
+      var data = {
+        title: "CircaFrax – L'Atelier, petites créations libres",
+        text: "Calendrier 2027, papercraft, carte de visite, jeux, flyers. À télécharger, à imprimer.",
+        url: "https://circafrax.github.io/atelier.html"
+      };
+      if(navigator.share){
+        navigator.share(data).catch(function(){});
+      } else if(navigator.clipboard){
+        navigator.clipboard.writeText(data.url).then(function(){
+          alert("Lien copié : " + data.url);
+        });
+      } else {
+        window.open(data.url, "_blank");
+      }
+    }
+  </script>
+</body>
+</html>
