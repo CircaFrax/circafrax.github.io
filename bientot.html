@@ -18,6 +18,8 @@
       --bg-paper:#fbfaf7; --border:rgba(10,18,40,0.08); --text:#0a1228; --muted:#6b7280;
     }
     *{box-sizing:border-box}
+    /* IMPORTANT : sinon hidden ne marche pas quand le CSS impose display:flex / grid */
+    [hidden]{display:none !important}
     body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);line-height:1.7}
     a{color:inherit;text-decoration:none}
     .serif{font-family:Georgia,'Times New Roman',serif;letter-spacing:-0.02em}
@@ -69,7 +71,7 @@
     .preview-full{width:100%;height:100%;position:relative;display:flex;align-items:center;justify-content:center}
     .preview-box{position:absolute;inset:12px;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,0.6);box-shadow:0 12px 30px -18px rgba(0,0,0,0.4)}
     .preview-box img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
-    .preview-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center}
+    .preview-fallback{position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;text-align:center}
     .best-overlay{position:absolute;bottom:10px;left:10px;right:10px;z-index:3;background:rgba(10,18,40,0.78);color:#fff;border-radius:12px;padding:6px 12px;font-size:12px;font-weight:600;display:flex;justify-content:space-between}
 
     .puzzle-actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
@@ -430,7 +432,7 @@
       const img = currentImage(), level = currentLevel();
       $("preview").innerHTML = `
         <div class="preview-box" style="background-image:url(${img.src}), ${img.fallback};background-size:cover;background-position:center">
-          <div class="preview-fallback" style="background:${img.fallback};opacity:.92">
+          <div class="preview-fallback" style="background:${img.fallback}">
             <div>
               <div style="font-size:42px;line-height:1">${img.emoji}</div>
               <div class="serif" style="font-size:18px;margin-top:8px;color:var(--navy);font-weight:700">${img.label}</div>
@@ -509,4 +511,3 @@
   </script>
 </body>
 </html>
-
